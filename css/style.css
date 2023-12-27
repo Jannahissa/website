@@ -21,7 +21,21 @@ h1, h2, h3, h4, h5, h6{
         border-radius: 10px;
     }
 
-    
+    @media only screen and (max-width: 767px) {
+		h2 {
+			font-size: 24px; /* Adjust the font size for h2 on smaller screens */
+		}
+	
+		h3.non-header-text {
+			font-size: 16px; /* Adjust the font size for h3 with class non-header-text on smaller screens */
+		}
+	
+		p {
+			font-size: 14px; /* Adjust the font size for paragraphs on smaller screens */
+		}
+	
+		/* You can add more styles for other elements as needed */
+	}
 
     .work_content {
         display: flex;
