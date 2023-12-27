@@ -10,18 +10,6 @@ a{
 }
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Rubik Scribble', sans-serif;
-}	
-.home_text h2 {
-    font-size: 36px; 
-    line-height: 1.2; 
-}
-
-@media only screen and (max-width: 767px) {
-    .home_text h2 {
-        font-size: 24px; /* Adjust the font size for h2 on smaller screens */
-        line-height: 1.2;
-    }
-
     
 }
 
@@ -139,21 +127,38 @@ header{
 .section_overlay{
 	background: rgba(199, 207, 236, 0.5);
 }
-.home_text{
-	padding-top: 210px;
-	padding-bottom: 210px;
+.home_text {
+    padding: 10% 5%;
 }
-.home_text h2{
-	color: #1e458d;
-	font-size: 100px;
-	text-transform: uppercase;
-	letter-spacing: 13px;
+
+.home_text h2 {
+    font-size: 6vw;
+    letter-spacing: 1vw;
+    color: #1e458d; /* Retain the original text color */
+    text-transform: uppercase;
 }
-.home_text p{
-	color: #0e1753;
-	font-size: 24px;
-	text-transform: uppercase;
+
+.home_text p {
+    font-size: 3vw;
+    color: #0e1753; /* Retain the original text color */
+    text-transform: uppercase;
 }
+
+@media only screen and (max-width: 767px) {
+    .home_text {
+        padding: 20% 5%; /* Adjust the percentage values for smaller screens */
+    }
+
+    .home_text h2 {
+        font-size: 8vw; /* Adjust the font size for h2 on smaller screens */
+        letter-spacing: 1.5vw; /* Adjust the letter spacing for h2 on smaller screens */
+    }
+
+    .home_text p {
+        font-size: 4vw; /* Adjust the font size for paragraphs on smaller screens */
+    }
+}
+
 .home_text img{}
 .scroll_down{
 	padding-bottom: 50px;
