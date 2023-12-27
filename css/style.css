@@ -10,14 +10,16 @@ a{
 }
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Rubik Scribble', sans-serif;
+}	
+.home_text h2 {
+    font-size: 36px; 
+    line-height: 1.2; 
 }
+
 @media only screen and (max-width: 767px) {
     .home_text h2 {
-        font-size: 24px; 
-    }
-
-    .home_text p {
-        font-size: 16px; 
+        font-size: 24px; /* Adjust the font size for h2 on smaller screens */
+        line-height: 1.2;
     }
 
     
