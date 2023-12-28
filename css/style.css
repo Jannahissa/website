@@ -677,24 +677,5 @@ text-align: center;
 line-height: 28px;
 transition: all 1s;
 }
-ul.icon_list li a:hover{
-	color: #f73b56;
-	border-color:#f73b56; 
-}
-.copyright_text{
-padding-top: 80px;	
-}
-.copyright_text p{
-color: #636363;
-font-size: 14px;
-text-transform: uppercase;
-margin-bottom: 0px;
-letter-spacing: 0px;
-}
-.copyright_text a{
-	color:#f73b56;
-	text-transform:uppercase;
-	font-weight:700;
-	text-decoration:none;
-	}
+
 
