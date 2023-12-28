@@ -44,6 +44,34 @@
                     <div id="status">&nbsp;</div>
                 </div>
 
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+                
+<script>
+   var starCounter = 0; 
+  $(document).mousemove(function (event) {
+    starCounter++; 
+
+   
+    if (starCounter % 2 === 0) {
+      var star = $('<div class="star">&#9733;</div>');
+      $('body').append(star);
+
+      // Set star position
+      star.css({
+        top: event.pageY - 10,
+        left: event.pageX - 10,
+      });
+
+      // Remove star after a short duration
+      setTimeout(function () {
+        star.remove();
+      }, 300);
+    }
+  });
+</script>
+
+
 
 
 
@@ -173,13 +201,13 @@
             <div class="row">
                 <div class="single_service wow fadeInUp" data-wow-delay="1s"></div>
                 <div class="text-center fadeInRight animated">
-                    <div class="single_service text-center wow fadeInUp" data-wow-delay="5s">
-                        <h3 class="non-header-text">
+                    <div class="text_overlay2 single_service text-center wow fadeInUp " data-wow-delay="5s">
+                        <h7 class="non-header-text">
                             Welcome to my website! My name is Jannah Issa, and I'm a student and aspiring UX Designer. I'm a second-year student at Northwestern University with a passion for crafting exceptional user experiences through the intersection of Cognitive Science and Computer Science. I'm on a mission to bridge the gap between human behavior and technology design, all while fostering inclusive learning environments. My goal is to build programs and applications that can make a positive impact on people's lives.
-                        </h3>
-                        <h3 class="non-header-text">
+                        </h7>
+                        <h7 class="non-header-text">
                             Currently pursuing the Segal Design and Human-Computer Interactions Certificates at Northwestern University, I'm refining my skills in design thinking and user-centered design. I'm eager to apply my expertise in internships or roles focused on creating exceptional user experiences.
-                        </h3>
+                        </h7>
                     </div>
                 </div>
             </div>
@@ -195,13 +223,13 @@
             <div class="owl-carousel">
                 <div class="single_testimonial text-center wow fadeInUp animated">
                     <p>2023 Posner Fellow</p>
-                    <h4>Awarded the prestigious Posner Fellowship at Northwestern’s TIILT Lab; conducted research on
-                        child-computer interaction and gesture-based interfaces for improving cognitive development</h4>
+                    <h7>Awarded the prestigious Posner Fellowship at Northwestern’s TIILT Lab; conducted research on
+                        child-computer interaction and gesture-based interfaces for improving cognitive development</h7>
                 </div>
                 <div class="single_testimonial text-center">
                     <p>Youth Public Service Award, October 2021</p>
-                    <h4>Highly esteemed recipient recognized for exceptional dedication, leadership, and positive impact in public service.
-                        Leveraged in-depth understanding of social issues to drive meaningful change through legislative initiatives and community engagement.</h4>
+                    <h7>Highly esteemed recipient recognized for exceptional dedication, leadership, and positive impact in public service.
+                        Leveraged in-depth understanding of social issues to drive meaningful change through legislative initiatives and community engagement.</h7>
                 </div>
             </div>            
         </div>

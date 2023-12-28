@@ -1,17 +1,93 @@
 body{
 	font-family: 'Rubik Scribble', sans-serif;
+	text-transform: uppercase;
 }
+
 p{
 	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+
 }
 a{
 	font-family: 'Rubik Scribble', sans-serif;
 	text-decoration: none;
+	text-transform: uppercase;
 }
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Rubik Scribble', sans-serif;
-    
+	font-weight: bold;
+	text-transform: uppercase;
+   
 }
+h7 {
+	font-family:  'Montserrat', sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+	/* Add stars to each navigation item */
+.navbar-default .navbar-nav>li {
+	position: relative;
+  }
+  
+  /* Define the star styles */
+  .navbar-default .navbar-nav>li::before {
+	content: '\2605'; /* Unicode character for a star */
+	font-size: 48px;
+	color: transparent; /* Initial color */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: color 0.3s ease-in-out; /* Add a smooth color transition */
+  }
+  
+  /* Change star color on hover */
+  .navbar-default .navbar-nav>li:hover::before {
+	color: #4279d74d; /* Change to desired star color on hover */
+  }
+  
+  
+/* Customize the scrollbar */
+body::-webkit-scrollbar {
+	width: 12px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+	background-color: #ffe44d; /* Scrollbar thumb color */
+	border-radius: 10px;
+  }
+  
+  body::-webkit-scrollbar-track {
+	background-color: #1e2878; /* Scrollbar track color */
+	border-radius: 10px;
+  }
+  
+  header {
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+  
+  
+  .home_text img {
+	transform: scale(1);
+	transition: transform 0.5s ease-in-out;
+  }
+  
+  .home_text img:hover {
+	transform: scale(1.1); /* Adjust the scale factor as needed */
+  }
+
+
+
+  /* Style for the stars */
+  .star {
+    position: absolute;
+    color: #ffe44d; /* Star color */
+    font-size: 25px;
+    pointer-events: none; /* Ignore stars for mouse events */
+  }
 
     .work_card {
         background-color: #9ec9e27b;
@@ -60,7 +136,11 @@ h1, h2, h3, h4, h5, h6{
         position: relative; /* Set position to relative for absolute positioning of the star */
         text-align: center; /* Center-align the text inside the title box */
     }
-
+	.work_title h1:hover {
+		color: #e8eaf4; /* Change to desired color on hover */
+		background-color: #4981c9a4;
+	  }
+	  
    
     .work_title h1::before {
         content: '\2605'; /* Unicode character for a star */
@@ -85,8 +165,13 @@ h1, h2, h3, h4, h5, h6{
 		margin: 10px;
 		background-color: #124983;
 		border-radius: 10px;
+		font-weight: bold;
 	}
 
+	button:hover {
+		background-color: #2e2a7e; 
+	  }
+	  
 
 
     /* Custom styling for the text overlay */
@@ -95,6 +180,15 @@ h1, h2, h3, h4, h5, h6{
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		
+    }
+
+	.text_overlay2 {
+        background-color: #505bd82f; 
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		
     }
 
 	.small-image {
@@ -116,6 +210,7 @@ h1, h2, h3, h4, h5, h6{
 .navbar-default .navbar-nav>li>a {
 color: #1e2878;
 text-transform: uppercase;
+font-weight: bold;
 }
 .navbar-default .navbar-nav>li>a:hover{
 	color: #a38a48;
@@ -136,6 +231,8 @@ header{
     letter-spacing: 1vw;
     color: #1e458d; /* Retain the original text color */
     text-transform: uppercase;
+	font-weight: bold;
+	
 }
 
 .home_text p {
@@ -190,6 +287,8 @@ header{
 	color: #000000;
 	font-size: 25px;
 	text-transform: uppercase;
+	font-weight: bold;
+	
 }
 .single_service p{
 	color: #404040;
@@ -219,6 +318,8 @@ background-color: #2d3334;
 	margin-top: 20px;
 	margin-bottom: 10px;
 	line-height: 21px;
+	font-weight: normal;
+	
 }
 
 .about_title h2 {
@@ -228,6 +329,7 @@ background-color: #2d3334;
 	margin-top: 85px;
 	letter-spacing: 6px;
 	margin-bottom: 21px;
+	font-weight: bold;
 }
 
 .about_title img {
@@ -236,6 +338,7 @@ background-color: #2d3334;
 
 .non-header-text {
 	font-family: 'Montserrat', sans-serif;
+
 	
 
 }
@@ -260,6 +363,7 @@ background-color: #2d3334;
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	margin-left: -38px;
+	
 
 }
 .testimonial .icon i{
@@ -278,6 +382,7 @@ font-size: 38px;
 font-family: 'Rubik Scribble', sans-serif;
 letter-spacing: 1px;
 padding-top: 110px;
+font-weight: bold;
 
 }
 .single_testimonial h4{
@@ -286,6 +391,7 @@ padding-top: 110px;
 	text-transform: uppercase;
 	font-family: 'Montserrat', sans-serif;
 	letter-spacing: 1px
+	font-weight: normal;
 }
 
 
@@ -591,3 +697,4 @@ letter-spacing: 0px;
 	font-weight:700;
 	text-decoration:none;
 	}
+
