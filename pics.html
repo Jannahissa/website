@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jannah's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Danfo&family=Freeman&display=swap" rel="stylesheet">
+    <link rel="script" href="script.js">
+    <link href='https://fonts.googleapis.com/css?family=Wire+One|Raleway:300' rel='stylesheet' type='text/css'>
+
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+          text-align: center;
+          padding: 32px;
+        }
+
+        .row {
+          display: -ms-flexbox; /* IE 10 */
+          display: flex;
+          -ms-flex-wrap: wrap; /* IE 10 */
+          flex-wrap: wrap;
+          padding: 0 4px;
+        }
+
+        /* Create four equal columns that sits next to each other */
+        .column {
+          -ms-flex: 25%; /* IE 10 */
+          flex: 25%;
+          padding: 0 4px;
+        }
+
+        .column img {
+          margin-top: 8px;
+          vertical-align: middle;
+        }
+
+        /* Style the buttons */
+        .btn {
+          border: none;
+          outline: none;
+          padding: 10px 16px;
+          background-color: #ffffff;
+          cursor: pointer;
+          font-size: 18px;
+          color: white;
+        }
+
+        .btn:hover {
+          background-color: #ffffff;
+        }
+
+        .btn.active {
+          background-color: #ffffff;
+          color: white;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #fedc7b;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .logo img {
+            height: 70px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin-left: auto;
+        }
+
+        .navbar ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            color: #6aa392;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: "Freeman", sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #f79a71;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        h2 {
+        font-size: 48px;
+        margin-bottom: 50px;
+        margin-top: 40px;
+        color: #f79a71; /* Pastel orange */
+        font-family: "danfo", serif;
+        }
+        h3 {
+        font-size: 28px;
+        color: #6aa392; /* Pastel orange */
+        font-family: "freeman", sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="ji.png" alt="Your Logo">
+            </a>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="index.html">Skills</a></li>
+            <li><a href="index.html">Experience</a></li>
+            <li>
+                <a href="#projects">Projects</a>
+                <ul class="dropdown">
+                    <li><a href="gesturecraft.html">GestureCraft</a></li>
+                    <li><a href="dineinwildcat.html">Dine-In Wildcat</a></li>
+                    <li><a href="guessinggame.html">Guessing Game</a></li>
+                    <li><a href="tailortalk.html">Tailortalk</a></li>
+                    <!-- Add more projects here -->
+                </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <div class="header" id="myHeader">
+      <h1>Image Grid</h1>
+      <p>Click on the buttons to change the grid view.</p>
+      <button class="btn" onclick="one()">1</button>
+      <button class="btn" onclick="two()">2</button>
+      <button class="btn active" onclick="four()">4</button>
+      <h2>Film & Friends!</h2>
+      <h3>I love bringing my cameras around with me! </h3>
+      <h3>Enjoy my fave pics!</h3>
+    </div>
+
+    <!-- Photo Grid -->
+    <div class="row"> 
+      <div class="column">
+        <img src="film/1.jpg" style="width:100%">
+        <img src="film/2.jpg" style="width:100%">
+        <img src="film/3.jpg" style="width:100%">
+        <img src="film/4.jpg" style="width:100%">
+        <img src="film/5.jpg" style="width:100%">
+        <img src="film/6.jpg" style="width:100%">
+        <img src="film/7.jpg" style="width:100%">
+        <img src="film/26.JPG" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="film/8.jpg" style="width:100%">
+        <img src="film/9.jpg" style="width:100%">
+        <img src="film/10.jpg" style="width:100%">
+        <img src="film/11.jpg" style="width:100%">
+        <img src="film/12.jpg" style="width:100%">
+        <img src="film/13.jpg" style="width:100%">
+        <img src="film/25.JPG" style="width:100%">
+      </div>  
+      <div class="column">
+        <img src="film/14.jpg" style="width:100%">
+        <img src="film/15.jpg" style="width:100%">
+        <img src="film/16.jpg" style="width:100%">
+        <img src="film/17.jpeg" style="width:100%">
+        <img src="film/18.jpeg" style="width:100%">
+        <img src="film/19.jpeg" style="width:100%">
+        <img src="film/20.jpeg" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="film/21.jpeg" style="width:100%">
+        <img src="film/22.jpeg" style="width:100%">
+        <img src="film/14.jpg" style="width:100%">
+        <img src="film/23.jpeg" style="width:100%">
+        <img src="film/24.jpg" style="width:100%">
+        <img src="film/26.JPG" style="width:100%">
+        <img src="film/27.JPG" style="width:100%">
+      </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-text">
+            <p> Jannah Issa <3 </p>
+            <p>Contact me: <a href="mailto:jannahissa2026@u.northwestern.edu">jannahissa2026@u.northwestern.edu</a></p>
+            <p>Find me on <a href="https://github.com/Jannahissa" target="_blank">Github</a> and <a href="https://www.linkedin.com/in/jannah-issa" target="_blank">LinkedIn!</a></p>
+        </div>
+    </footer>
+</body>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+    // Get the elements with class="column"
+    var elements = document.getElementsByClassName("column");
+
+    // Declare a loop variable
+    var i;
+
+    // Four images side by side (default)
+    function four() {
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.msFlex = "25%";  // IE10
+        elements[i].style.flex = "25%";
+      }
+    }
+
+    // Add active class to the current button (highlight it)
+    var header = document.getElementById("myHeader");
+    var btns = header.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+    </script>
+
+</body>
+</html>
