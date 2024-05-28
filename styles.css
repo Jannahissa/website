@@ -179,11 +179,13 @@
     font-size: 38px;
     text-align: left;
     color: #fff3d1;
+    
   }
   
   .about-container img {
     max-width: 60%;
     height: auto;
+    border-radius: 15px;
   }
   
   .about-text {
