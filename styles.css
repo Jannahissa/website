@@ -219,6 +219,15 @@
 
 
 /* Skill Cards Styles */
+.skills-section {
+    background-color: #e6f2deb8;
+    padding: 100px;
+    border-radius: 15px;
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+}
+
+/* Skill Cards Styles */
 @keyframes float {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -236,7 +245,6 @@
     animation: float 3s ease-in-out infinite;
 }
 
-
 .skill-card:hover {
     transform: translateY(-10px);
 }
@@ -250,14 +258,16 @@
 
 .skill-card ul {
     list-style-type: none;
+    padding: 0;
 }
 
 .skill-card ul li {
     font-size: 22px;
     margin-bottom: 5px;
     font-family: "Freeman", sans-serif;
-    color:#6aa392;
+    color: #6aa392;
 }
+
 
 /* experience Styles */
 .timeline {
@@ -333,8 +343,8 @@
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr)); 
-    gap: 1px;
     justify-content: center; 
+    background-color: #e6f2deb8;
 }
 
 .project {
@@ -418,7 +428,7 @@
 .contact-container {
     padding: 100px 300px;
     text-align: center;
-    background-color: #e9fff1;
+    background-color: #fffee9;
 }
 
 .contact-content {
@@ -542,6 +552,19 @@
   background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#e6f2de), color-stop(0.49, #e6f2de), color-stop(0.51, #fff), to(white));
 -webkit-background-size: 49px 100%;
 }
+.scallop-down-1{
+    height:100px;
+    width:100%;
+    background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#e6f2deb8), color-stop(0.49, #e6f2deb8), color-stop(0.51, #fff), to(white));
+  -webkit-background-size: 49px 100%;
+  }
+
+.scallop-down-2{
+    height:100px;
+    width:100%;
+    background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#ffffffb8), color-stop(0.49, #ffffffb8), color-stop(0.51, #e6f2deb8), to(#e6f2deb8));
+  -webkit-background-size: 49px 100%;
+  }
 .project-block {
     display: flex;
     align-items: center;
