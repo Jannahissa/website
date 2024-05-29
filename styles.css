@@ -426,9 +426,10 @@
 
 /* Contact Section */
 .contact-container {
-    padding: 100px 300px;
+    padding: 80px 300px;
     text-align: center;
-    background-color: #fffee9;
+    background-color: #e6f2deb8;
+    border-radius: 20px;
 }
 
 .contact-content {
@@ -444,7 +445,7 @@
 }
 
 .contact-text h2 {
-    font-size: 56px;
+    font-size: 66px;
     color: #f79a71; 
     margin-bottom: 20px;
     font-family: "danfo", serif;
@@ -459,7 +460,9 @@
 
 .contact-buttons {
     flex: 1;
-    text-align: left;
+    text-align: center;
+    transform: translateX(30%);
+
 }
 
 .contact-buttons a {
@@ -487,6 +490,7 @@
 .contact-image {
     flex: 1;
     text-align: left;
+    transform: translateX(-10%);
 }
 
 .contact-image img {
@@ -563,6 +567,14 @@
     height:100px;
     width:100%;
     background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#ffffffb8), color-stop(0.49, #ffffffb8), color-stop(0.51, #e6f2deb8), to(#e6f2deb8));
+  -webkit-background-size: 49px 100%;
+  }
+
+  .scallop-down-3{
+    height:100px;
+    width:120%;
+    transform: translateY(-20%) translateX(-10%);
+    background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#ffffff), color-stop(0.49, #ffffff), color-stop(0.51, #fedb7b), to(#fedb7b));
   -webkit-background-size: 49px 100%;
   }
 .project-block {
