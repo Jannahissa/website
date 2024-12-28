@@ -1,317 +1,1132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js ss-preload" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jannah's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Danfo&family=Freeman&display=swap" rel="stylesheet">
-    <link rel="script" href="script.js">
-    <link href='https://fonts.googleapis.com/css?family=Wire+One|Raleway:300' rel='stylesheet' type='text/css'>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Jannah's Site</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+
 </head>
-<body>
 
-<!-- Landing Page -->
-<section id="landing" class="landing">
-    <div class="sun"></div>
-    <div class="cloud"></div>
-    <div class="landing-content">
-        <h1>Hi, I'm Jannah</h1>
-        <img src="sun.gif" alt="Jannah" class="jannah-cutout">
-        <p>UX/UI, HCI, DESIGN, & MORE</p>
-    </div>
-</section>
-
-<section>
-    <div class="scallop-down"></div>
-        
-    </div>
-</section>
-<!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="logo">
-        <a href="#landing">
-            <img src="ji.png" alt="Your Logo">
-        </a>
-    </div>
-    <ul>
-        <li><a href="#landing">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li>
-            <a href="#projects">Projects</a>
-            <ul class="dropdown">
-                <li><a href="gesturecraft.html">GestureCraft</a></li>
-                <li><a href="dineinwildcat.html">Dine-In Wildcat</a></li>
-                <li><a href="guessinggame.html">Split</a></li>
-                <li><a href="tailortalk.html">Tailortalk</a></li>
-                <!-- Add more projects here -->
-            </ul>
-        </li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+<body id="top">
 
 
-<!-- Home Section -->
-<!-- <section id="home" class="section">
-    <h2>Welcome to My Portfolio!</h2>
-    
-</section> -->
-
-<!--about me -->
-<section id="about" class="about section">
-    <div class="about-content">
-        <h2>About Me</h2>
-    </div>
-    <div class="about-container">
-        <div class="overlay-text">
-            <h3>I'm a student at Northwestern University studying cognitive and Computer Science </h3>
-        </div>
-        <img src="Jannah.PNG" alt="Your Photo">
-        <div class="about-text">
-            <p>My work focuses on <strong style="color:#f79a71;">User Experience and Human-Centered projects</strong>. I am currently pursuing the Segal Design Certificate, trying to understand human behavior and technology design principles.</p>
-            <p>When I'm not in class, you'll find me diving into projects at TIILT Lab, tinkering, testing, and <strong style="color:#f79a71;">making things better</strong>. I also love doing web dev for student startups, helping them shine online!</p>
-            <p>For fun I <strong style="color:#f79a71;">shoot film</strong>, customize clothes, explore the city, and jam out! Wanna learn more? Let's Talk! <strong style="color:#f79a71;">(plus check out my pics!)</strong> </p>
-            <!-- Icon button to film.html -->
-            <div class="film-icon">
-                <a href="pics.html">
-                    <img src="pics.PNG" alt="Film Icon" class="film-button">
-                </a>
-            </div>
+    <!-- # preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
         </div>
     </div>
-</section>
-<section>
-    <div class="scallop-down-2"></div>   
-    </div>
-</section>
-
-
-<!-- Skills Section -->
-<section id="skills" class="section skills-section">
-    <h2>Skills</h2>
-    <div class="skill-card">
-        <h3>Languages</h3>
-        <ul>
-            <li>Python</li>
-            <li>HTML/CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Racket</li>
-            <li>C++</li>
-            <li>Swift</li>
-        </ul>
-    </div>
-    <div class="skill-card">
-        <h3>Software</h3>
-        <ul>
-            <li>Figma</li>
-            <li>Git</li>
-            <li>Adobe XD</li>
-            <li>Adobe Creative Cloud Suite</li>
-            <li>Microsoft Office Suite</li>
-            <li>Autodesk</li>
-            <li>Bootstrap</li>
-        </ul>
-    </div>
-    <div class="skill-card">
-        <h3>Technical</h3>
-        <ul>
-            <li>Design Sketching</li>
-            <li>User Experience Research</li>
-            <li>Graphic Design</li>
-            <li>Rapid Prototyping</li>
-            <li>Journey Mapping</li>
-            <li>Animation</li>
-            <li>Conceptual Design</li>
-        </ul>
-    </div>
-    <div class="skill-card">
-        <h3>Activities</h3>
-        <ul>
-            <li>Girls Who Code</li>
-            <li>Society of Women Engineers (SWE)</li>
-            <li>Women in Computing</li>
-            <li>Middle Eastern & North African Student Association</li>
-            <li>Colorstack</li>
-            <li>Design for America</li>
-            <li>Emerging Coders</li>
-        </ul>
-    </div>
-</section>
-<section>
-    <div class="scallop-down-1"></div>
-        
-    </div>
-</section>
-
-<!-- Experience Section -->
-<section id="experience" class="section">
-    <h2>Experience</h2>
-    <div class="timeline">
-        <div class="event">
-            <div class="event-info">
-                <h3>Frontend Web Developer - UX/UI</h3>
-                <p>The Garage at Northwestern University</p>
-                <p>Feb 2024 - Present</p>
-            </div>
-            <div class="event-details">
-                <p>Proficient in designing and developing user-friendly websites and interfaces tailored specifically for student startups.</p>
-                <p>Skilled in leveraging creative design principles and cutting-edge technologies to enhance online presence and user experience.</p>
-                <p>Collaborative approach, working closely with startup teams to understand their vision and translate it into compelling digital solutions.</p>
-            </div>
-        </div>
-        <div class="event">
-            <div class="event-info">
-                <h3>Undergraduate Developer and Researcher</h3>
-                <p>TIILT Lab</p>
-                <p>May 2023 - Present</p>
-            </div>
-            <div class="event-details">
-                <p>Manager of the Gesture-Craft Team in the Technological Innovations for Inclusive Learning and Teaching (tiilt) Lab.</p>
-                <p>Conducted extensive User research on various types of gestures and their impact on learning environments.</p>
-                <p>Developed a Python-based gesture interface utilizing camera input to recognize and interpret hand gestures. Customized the interface for children and integrated gesture recognition into Minecraft.</p>
-            </div>
-        </div>
+    <!-- Add this after your preloader div -->
+<div class="floating-stars">
+    <div class="star">✦</div>
+    <div class="star">✧</div>
+    <div class="star">⋆</div>
+    <div class="star">✦</div>
+    <div class="star">✧</div>
+  </div>
   
-        <div class="event">
-            <div class="event-info">
-                <h3>Capstone Lead - Junior Internship</h3>
-                <p>Policy Pathways, Inc.</p>
-                <p>May 2021 - Nov 2021 · 7 mos</p>
-            </div>
-            <div class="event-details">
-                <p>Conducted in-depth research on legislative bodies, nonprofit organizations, and private corporations to improve outreach, communications, and funding.</p>
-                <p>Played a pivotal role in strategic planning and decision-making processes by drafting a system to foster collaborative relations between the VA government and the recognized tribes of Virginia.</p>
-                <p>Oversaw and coordinated qualitative research initiatives as Capstone Lead.</p>
-            </div>
-        </div>
-     
-        <div class="event">
-            <div class="event-info">
-                <h3>Home Tutor</h3>
-                <p>Self Employed</p>
-                <p>Sep 2020 - Jun 2021 · 10 mos</p>
-            </div>
-            <div class="event-details">
-                <p>Provided specialized educational instruction as a home tutor, catering to the unique needs of two students.</p>
-                <p>Implemented targeted teaching methods to enhance reading and comprehension skills for a 7-year-old student.</p>
-                <p>Facilitated in-depth learning in mathematics and biology for a 13-year-old student, including comprehensive instruction in C++ programming and Arduino utilization.</p>
-            </div>
-        </div>
-
-        <div class="event">
-            <div class="event-info">
-                <h3>Virginia Aerospace Science and Technology Scholars (VASTS) Program Internship</h3>
-                <p>NASA - National Aeronautics and Space Administration</p>
-                <p>Oct 2019 - Jun 2020 · 9 mos</p>
-            </div>
-            <div class="event-details">
-                <p>Secured a position in a highly competitive research program focused on the intricate design and simulation of technology and procedures for the International Space Station.</p>
-                <p>Conducted extensive research on failed space missions, analyzing ethical dimensions using global engineering guidelines. Developed innovative technologies and proposed alternative strategies to address past failures and improve future endeavors.</p>
-            </div>
-        </div>
+  <style>
+  .floating-stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+  }
   
+  .star {
+      position: fixed;
+      color: var(--color-1);
+      opacity: 0.3;
+      font-size: 1.5rem;
+  }
+  
+  .star:nth-child(1) {
+      animation: floatStar 8s linear infinite;
+      left: 10%;
+  }
+  .star:nth-child(2) {
+      animation: floatStar 10s linear infinite 2s;
+      left: 30%;
+  }
+  .star:nth-child(3) {
+      animation: floatStar 7s linear infinite 1s;
+      left: 50%;
+  }
+  .star:nth-child(4) {
+      animation: floatStar 9s linear infinite 3s;
+      left: 70%;
+  }
+  .star:nth-child(5) {
+      animation: floatStar 11s linear infinite 1.5s;
+      left: 90%;
+  }
+  
+  @keyframes floatStar {
+      0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+      }
+      50% {
+          opacity: 0.3;
+      }
+      100% {
+          transform: translateY(-100vh) rotate(360deg);
+          opacity: 0;
+      }
+  }
+  </style>
+    <!-- Left Side Progress Bar Container -->
+<div class="scroll-progress-container">
+    <div class="scroll-progress-bar">
+        <div class="progress-fill"></div>
     </div>
+    <!-- Star decorations -->
+    <svg class="progress-star top" viewBox="0 0 24 24" width="20" height="20">
+        <path d="M12 2l2.4 7.4h7.6l-6 4.4 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.4h7.6z" 
+              fill="var(--color-1)"/>
+    </svg>
+    <svg class="progress-star bottom" viewBox="0 0 24 24" width="20" height="20">
+        <path d="M12 2l2.4 7.4h7.6l-6 4.4 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.4h7.6z" 
+              fill="var(--color-1)"/>
+    </svg>
     
-</section>
-
-
-<section id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="scallop-down-2"></div>   
+    <!-- Shooting Star Animation -->
+    <div class="shooting-star">
+        <div class="star-trail"></div>
     </div>
-    <div class="project-grid">
-        <div class="project">
-            <a href="gesturecraft.html">
-                <img src="w1.PNG" alt="GestureCraft">
-                <div class="description">
-                    <p> By leveraging gesture recognition technologies like Python, OpenCV, and MediaPipe, I've created a learning environment where children navigate and build within Minecraft using intuitive gestures. This innovative approach promotes spatial reasoning, enhances engagement, and fosters inclusivity, especially benefiting children with disabilities.</p>
+</div>
 
-                    <p>Skills: User Research, Interaction Design, Gesture Recognition, Python, OpenCV, MediaPipe, Minecraft API Integration</p>
-                </div>
-            </a>
-        </div>
-        <div class="project">
-            <a href="dineinwildcat.html">
-                <img src="dine.PNG" alt="Dine-In Wildcat">
-                <div class="description">
-                    <p>Dine-In Wildcat revolutionizes the dining experience for Northwestern students and Evanston explorers alike. This app seamlessly connects users with a curated list of local restaurants, offering exclusive discounts and personalized recommendations. Built with JavaScript for dynamic content, HTML5 and CSS3 for structure and style, React Native for cross-platform mobile development, Firebase for backend services, and integrated APIs for real-time restaurant data and discounts management.</p>
+<style>
+/* Progress Bar Container */
+.scroll-progress-container {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 60%;
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-                    <p>Skills: JavaScript, HTML5, CSS3, React Native, Firebase, API Integration</p>
-                </div>
-            </a>
-        </div>
-        <div class="project">
-            <a href="guessinggame.html">
-                <img src="guess.PNG" alt="Guessing Game">
-                <div class="description">
-                    <p>Split is designed to streamline the process of dividing dinner bills among friends. Users can effortlessly calculate tax, tip, and split amounts by entering the total bill, number of people, and tip percentage. The site handles complex scenarios like uneven splits and allows users to exclude specific items for fairness. Built with HTML5, CSS3, JavaScript, jQuery, Bootstrap, and React, Split ensures a modern, responsive interface that adapts seamlessly across devices.</p>
+.scroll-progress-bar {
+    position: relative;
+    height: 100%;
+    width: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
 
-                    <p>Technologies: HTML5, CSS3, JavaScript, jQuery, Bootstrap, React</p>
-                </div>
-            </a>
-        </div>
-        <div class="project">
-            <a href="tailortalk.html">
-                <img src="talk.PNG" alt="TailorTalk">
-                <div class="description">
-                    <p>TailorTalk's website underwent a transformation to integrate AI seamlessly into the creative writing process. As the web developer for this student startup, I revamped the site to highlight innovative features such as the Character Builder, Dialogue Generator, and Storyline Organizer. Using HTML, CSS, and GitHub for version control, I ensured the site's design was futuristic yet user-friendly, catering to both creative writers and AI enthusiasts.</p>
+.progress-fill {
+    width: 100%;
+    height: 0%;
+    background: var(--color-1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    transition: height 0.1s ease;
+    box-shadow: 0 0 10px var(--color-1);
+}
 
-                    <p>Skills: Web Development, HTML, CSS, User Interface Design, GitHub, Collaboration</p>
-                </div>
-            </a>
-        </div>
-    </div>
-        <div class="scallop-down-1"></div>
+/* Progress Stars */
+.progress-star {
+    position: absolute;
+    left: 10px;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.progress-star.top {
+    top: -10px;
+    animation: starFloatVertical 3s ease-in-out infinite;
+}
+
+.progress-star.bottom {
+    bottom: -10px;
+    animation: starFloatVertical 3s ease-in-out infinite reverse;
+}
+
+/* Shooting Star */
+.shooting-star {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    visibility: hidden;
+    opacity: 0;
+    transform-origin: center;
+}
+
+.shooting-star.active {
+    visibility: visible;
+    animation: shootingStar 1s ease-out forwards;
+}
+
+.star-trail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-1), transparent);
+}
+
+.star-trail::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-1);
+    font-size: 12px;
+    animation: starPulse 0.3s ease-in-out infinite alternate;
+}
+
+/* Animations */
+@keyframes starFloatVertical {
+    0%, 100% {
+        transform: translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-3px) rotate(10deg);
+    }
+}
+
+@keyframes shootingStar {
+    0% {
+        transform: translate(-100%, -100%) rotate(-45deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100%, 100%) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes starPulse {
+    from { transform: translateY(-50%) scale(1); }
+    to { transform: translateY(-50%) scale(1.5); }
+}
+
+/* Shine effect */
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transform: translateY(-100%);
+    animation: shine 2s ease-in-out infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .scroll-progress-container {
+        left: 10px;
+        width: 30px;
+    }
+    
+    .progress-star {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .scroll-progress-container {
+        height: 40%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .scroll-progress-container {
+        left: 5px;
+    }
+    
+    .progress-star {
+        width: 14px;
+        height: 14px;
+    }
+}
+</style>
+
+<script>
+let hasTriggeredShootingStar = false;
+
+// Update progress bar on scroll
+document.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    
+    const progressBar = document.querySelector('.progress-fill');
+    const shootingStar = document.querySelector('.shooting-star');
+    
+    if (progressBar) {
+        progressBar.style.height = scrolled + '%';
+        
+        // Trigger shooting star at 100%
+        if (scrolled >= 99 && !hasTriggeredShootingStar) {
+            hasTriggeredShootingStar = true;
+            shootingStar.classList.add('active');
             
+            // Reset shooting star after animation
+            setTimeout(() => {
+                shootingStar.classList.remove('active');
+                hasTriggeredShootingStar = false;
+            }, 1000);
+        }
+        
+        // Reset flag when scrolling back up
+        if (scrolled < 99) {
+            hasTriggeredShootingStar = false;
+        }
+    }
+});
+</script>
+<style>
+    /* Default star cursor for all elements */
+    * {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23eabe7c' d='M12 2l2.4 7.4h7.6l-6 4.4 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.4h7.6z'/%3E%3C/svg%3E") 12 12, 
+            auto;
+    }
+    
+    /* Animated star cursor for clickable elements */
+    a, button, select, input[type="submit"], input[type="button"], 
+    [role="button"], .clickable {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cpath fill='%23eabe7c' d='M12 2l2.4 7.4h7.6l-6 4.4 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.4h7.6z'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='3s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E") 16 16, 
+            pointer;
+    }
+    
+    /* Animated star cursor for text input areas */
+    input[type="text"], input[type="email"], 
+    textarea, [contenteditable="true"] {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23eabe7c' d='M12 2l2.4 7.4h7.6l-6 4.4 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.4h7.6z'%3E%3CanimateTransform attributeName='transform' type='scale' values='1;1.2;1' dur='1s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E") 12 12, 
+            text;
+    }
+    
+    /* Loading state cursor */
+    .loading, .loading * {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23eabe7c' d='M12 2l2.4 7.4h7.6l-6 4.4 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.4h7.6z'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='1s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E") 12 12, 
+            wait;
+    }
+    
+    /* Disabled state cursor */
+    [disabled], .disabled {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23999999' d='M12 2l2.4 7.4h7.6l-6 4.4 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.4h7.6z'/%3E%3C/svg%3E") 12 12, 
+            not-allowed;
+    }
+    </style>
+
+    <!-- # page wrap
+    ================================================== -->
+    <div class="s-pagewrap">
+
+        <div class="decorative-container">
+            <svg class="decorative-bg" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <!-- Star pattern -->
+                    <pattern id="starPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                        <path d="M50 15 L57 35 L78 35 L61 48 L67 67 L50 56 L33 67 L39 48 L22 35 L43 35 Z" 
+                              fill="none" 
+                              stroke="var(--color-gray-9)" 
+                              stroke-width="1" 
+                              opacity="0.1"
+                              class="star-path"/>
+                        <path d="M85 65 L88 75 L98 75 L90 82 L93 92 L85 86 L77 92 L80 82 L72 75 L82 75 Z" 
+                              fill="none" 
+                              stroke="var(--color-gray-9)" 
+                              stroke-width="0.8" 
+                              opacity="0.08"
+                              class="star-path-small"/>
+                    </pattern>
+        
+                    <!-- Glowing gradient -->
+                    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" style="stop-color:var(--color-1);stop-opacity:0.2"/>
+                        <stop offset="100%" style="stop-color:var(--color-1);stop-opacity:0"/>
+                    </radialGradient>
+                </defs>
+        
+                <!-- Background pattern -->
+                <rect width="100%" height="100%" fill="url(#starPattern)"/>
+        
+                <!-- Large central star -->
+                <path class="central-star" 
+                      d="M400 300 L420 350 L470 350 L430 385 L445 435 L400 405 L355 435 L370 385 L330 350 L380 350 Z"
+                      fill="none"
+                      stroke="var(--color-gray-9)"
+                      stroke-width="2"
+                      opacity="0.15"/>
+        
+                <!-- Glowing circle behind central star -->
+                <circle class="glow-circle" 
+                        cx="400" 
+                        cy="350" 
+                        r="100" 
+                        fill="url(#starGlow)"/>
+        
+                <!-- Additional accent stars -->
+                <g class="accent-stars">
+                    <path class="accent-star" 
+                          d="M200 200 L210 225 L235 225 L215 240 L225 265 L200 250 L175 265 L185 240 L165 225 L190 225 Z"
+                          fill="none"
+                          stroke="var(--color-1)"
+                          stroke-width="1.5"
+                          opacity="0.12"/>
+                    <path class="accent-star" 
+                          d="M600 400 L610 425 L635 425 L615 440 L625 465 L600 450 L575 465 L585 440 L565 425 L590 425 Z"
+                          fill="none"
+                          stroke="var(--color-1)"
+                          stroke-width="1.5"
+                          opacity="0.12"/>
+                </g>
+            </svg>
         </div>
-</section>
+        
+        <style>
+        .decorative-container {
+            position: absolute;
+            width: var(--circle-width);
+            height: var(--circle-width);
+            top: calc(100vh - var(--circle-width));
+            left: calc(100% - 33vw);
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .decorative-bg {
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            animation: subtle-rotate 120s linear infinite;
+        }
+        
+        .star-path, .star-path-small {
+            transform-origin: center;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+        
+        .star-path-small {
+            animation-delay: -2s;
+        }
+        
+        .central-star {
+            transform-origin: center;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .glow-circle {
+            animation: glow 8s ease-in-out infinite;
+        }
+        
+        .accent-stars {
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        .accent-star:nth-child(2) {
+            animation-delay: -4s;
+        }
+        
+        @keyframes subtle-rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.2;
+                transform: scale(1.1);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                opacity: 0.1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.25;
+                transform: scale(1.1);
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 800px) {
+            .decorative-container {
+                opacity: 0.7;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .decorative-container {
+                opacity: 0.5;
+            }
+        }
+        </style>
 
 
-
-
-<!-- Contact Section -->
-
-<!-- Contact Section -->
-<section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <div class="contact-container">
-        <div class="contact-content">
-            <div class="contact-text">
-                <h2>Thank you for visiting, wanna talk more?</h2>
-                <p>(Awesome, me too!)</p>
+        <!-- ## site header 
+        ================================================== -->
+        <header class="s-header">
+            <div class="header-mobile">
+                <span class="mobile-home-link"><a href="index.html">Jannah</a></span>
+                <a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
             </div>
-            <div class="contact-buttons">
-                <a href="mailto:jannahissa2026@u.northwestern.edu">Email Me</a>
-                <a href="https://www.linkedin.com/in/jannah-issa" target="_blank">LinkedIn</a>
-                <a href="https://github.com/Jannahissa" target="_blank">GitHub</a>
+
+            <div class="row wide main-nav-wrap">
+                <nav class="column lg-12 main-nav">
+                    <ul>
+                        <li><a href="index.html" class="home-link" style="color: #084211;">Jannah</a></li>
+                        <li class="current"><a href="#intro" class="smoothscroll" style="color: #084211;">Intro</a></li>
+                        <li><a href="#about" class="smoothscroll" style="color: #084211;">About</a></li>
+                        <li><a href="#works" class="smoothscroll" style="color: #084211;">Projects</a></li>
+                        <li><a href="#contact" class="smoothscroll" style="color: #084211;">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="contact-image">
-                <img src="jan.jpg" alt="Your Name">
+            
+
+        </header> <!-- end s-header -->
+
+
+        <!-- ## main content
+        ==================================================- -->
+        <main class="s-content">
+
+
+            <!-- ### intro
+            ================================================== -->
+            <section id="intro" class="s-intro target-section">
+
+                <div class="row intro-content wide">
+                    <div class="column">
+                        <div class="text-pretitle with-line">
+                            Hey There!
+                        </div>
+
+                        <h1 class="text-huge-title">
+                            I'm Jannah! <br>
+                            A creative coder, <br>
+                            a UX Designer, <br> 
+                            & a storyteller crafting <br>
+                            engaging &
+                            intuitive interfaces
+                        </h1>
+                    </div>
+
+                    <ul class="intro-social">
+                        <li><a href="https://www.linkedin.com/in/jannah-issa">LinkedIn</a></li>
+                        <li><a href="https://github.com/Jannahissa">Github</a></li>
+                        <li><a href="mailto:jannahissa2026@u.northwestern.edu">Email</a></li>
+                        <li><a href="images/Jannah Issa Resume 2024-2025.pdf">Resume</a></li>
+                    </ul>
+
+                </div> <!-- end intro content -->
+
+                <a href="#about" class="intro-scrolldown smoothscroll">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg>
+                </a>
+
+            </section> <!-- end s-intro -->
+
+
+            <!-- ### about
+            ================================================== -->
+            <section id="about" class="s-about target-section">
+
+                <div class="row about-info wide" data-animate-block>
+                    <div class="column lg-6 md-12 about-info__pic-block">
+                        <img src="images/snow.jpg" srcset="images/snow.jpg" alt="" class="about-info__pic " data-animate-el>
+                    </div>
+                    <div class="column lg-6 md-12">
+                        <div class="about-info__text">
+                            <h2 class="text-pretitle with-line rainbow-text" data-animate-el>
+                                About
+                            </h2>
+                            <p class="attention-getter sparkle" style="color:white" >
+                                I'm a student at Northwestern University studying cognitive and Computer Science! <br>
+                                My work focuses on User Experience and Human-Centered projects. I am currently pursuing the Segal Design Certificate, trying to understand human behavior and technology design principles. <br>
+                                When I'm not in class, you'll find me diving into projects at TIILT Lab, tinkering, testing, and making things better. I also love doing web dev for student startups, helping them shine online! <br>
+                                For fun I shoot film, customize clothes, explore the city, and jam out! Wanna learn more? Let's Talk! <span class="rainbow-text">(plus check out my pics!)</span> <br>
+                            </p>
+                            <div class="button-group" data-animate-el>
+                                <a href="film.html" class="btn btn--medium film-picture" style="color:azure">My Film Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 style="color: #ddecf1;"> hi</h1>
+                </div>
+                <div class="logo-container">
+                    <img src="images/ji.png" alt="Jannah Issa Logo" class="intro-logo">
+                </div>
+                <div class="row about-expertise" data-animate-block>
+                    <div class="column lg-12">
+
+                        <h2 class="text-pretitle" data-animate-el>Expertise</h2>
+
+                        <ul class="skills-list h1"  data-animate-el>
+                            <li>Frontend Development</li>
+  <li>UX Design</li>
+  <li>Creative Coding</li>
+  <li>Prototyping</li>
+  <li>Web Interfaces</li>
+  <li>User Research</li>
+                        </ul>
+
+                    </div>
+                </style>
+
+                <div class="row about-timelines" data-animate-block>
+                    <div class="column lg-12">
+                        <h2 class="text-pretitle" data-animate-el>Skills</h2>
+                        <div class="skills-container" data-animate-el>
+                            <div class="skill-bubble">
+                                <h4>⋆｡°✩ Technical ⋆｡°✩</h4>
+                                <div class="skill-category">Languages</div>
+                                <ul class="skill-list" style="color:white">
+                                    <li>Python</li>
+                                    <li>HTML/CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>React</li>
+                                    <li>Swift</li>
+                                </ul>
+                            </div>
+                            <div class="skill-bubble">
+                                <h4>⋆｡°✩ Software ⋆｡°✩</h4>
+                                <div class="skill-category">Tools</div>
+                                <ul class="skill-list" style="color:white">
+                                    <li>Figma</li>
+                                    <li>Adobe Creative Cloud</li>
+                                    <li>Autodesk</li>
+                                    <li>Git</li>
+                                    <li>Microsoft Office</li>
+                                </ul>
+                            </div>
+                            <div class="skill-bubble">
+                                <h4>⋆｡°✩ Creative ⋆｡°✩</h4>
+                                <div class="skill-category">Design & More!</div>
+                                <ul class="skill-list">
+                                    <li>Design Sketching</li>
+                                    <li>User Experience Research</li>
+                                    <li>Journey Mapping</li>
+                                    <li>Conceptual Design</li>
+                                    <li>Rapid Prototyping</li>
+                                </ul>
+                            </div>
+                            <div class="skill-bubble">
+                                <h4>⋆｡°✩ Activites ⋆｡°✩</h4>
+                                <div class="skill-category"> </div>
+                                <ul class="skill-list">
+                                    <li>Design for America</li>
+                                    <li>Society of Women Engineers (SWE)</li>
+                                    <li>Emerging Coders</li>
+                                    <li>NSBE</li>
+                                    <li>A&O Productions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                            </div> <!-- end timeline -->
+    
+                        </div> <!-- end column -->
+    
+                </div> <!-- end about-expertise -->
+
+
+                <div class="row about-timelines" data-animate-block>
+
+                    <div class="column lg-6 tab-12">
+
+
+
+                    </div> <!-- end column -->
+
+                    <div class="row">
+                        <div class="column lg-6 tab-12">
+                            <h2 class="text-pretitle" data-animate-el>Education</h2>
+                            <div class="timeline" data-animate-el>
+                                <div class="timeline__block">
+                                    <div class="timeline__bullet"></div>
+                                    <div class="timeline__header">
+                                        <h4 class="timeline__title">Northwestern University</h4>
+                                        <h5 class="timeline__meta">B.A. Cognitive Science & Computer Science</h5>
+                                        <p class="timeline__timeframe">Expected June 2026</p>
+                                    </div>
+                                    <div class="timeline__desc">
+                                        <p>Currently pursuing a B.A. in Cognitive Science and Computer Science, integrating knowledge of human cognition with technical skills in programming and design. Relevant courses include Fundamentals of Computer Programming, Data Structures and Algorithms, Introduction to Cognitive Modeling, Design, Thinking, & Communication, HCI Studio, User Experience Design, Technology & Human Interaction.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline__block">
+                                    <div class="timeline__bullet"></div>
+                                    <div class="timeline__header">
+                                        <h5 class="timeline__meta">Segal Manufacturing & Design Certificate</h5>
+                                        <p class="timeline__timeframe">Expected 2026</p>
+                                    </div>
+                                    <div class="timeline__desc">
+                                        <p>Focused on design thinking, prototyping, and manufacturing principles, enhancing technical skills in product creation and problem-solving.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline__block">
+                                    <div class="timeline__bullet"></div>
+                                    <div class="timeline__header">
+                                        <h5 class="timeline__meta">Human-Computer Interaction Certificate</h5>
+                                        <p class="timeline__timeframe">Expected 2026</p>
+                                    </div>
+                                    <div class="timeline__desc">
+                                        <p>Studying human-computer interaction, exploring how technology and design intersect to improve user experience and accessibility.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="column lg-6 tab-12">
+                            <h2 class="text-pretitle" data-animate-el>Experience</h2>
+                            <div class="timeline" data-animate-el>
+                                <div class="timeline__block">
+                                    <div class="timeline__bullet"></div>
+                                    <div class="timeline__header">
+                                        <h4 class="timeline__title">UX Design Intern</h4>
+                                        <h5 class="timeline__meta">PriceSenz, Dallas, TX</h5>
+                                        <p class="timeline__timeframe">June 2024 - August 2024</p>
+                                    </div>
+                                    <div class="timeline__desc">
+                                        <p>Specialized in creating seamless user experiences and developing interfaces for an AI-powered recruitment platform. Gained in-depth experience in UI/UX design, human-computer interaction (HCI), user research methodologies, and integrating AI-driven solutions. Leveraged data engineering techniques to streamline design processes and conducted comprehensive market analyses to align with PriceSenz's mission of delivering cutting-edge technology and talent solutions for diverse clients in both commercial and public sectors.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline__block">
+                                    <div class="timeline__bullet"></div>
+                                    <div class="timeline__header">
+                                        <h4 class="timeline__title">Frontend Web Developer - UX/UI</h4>
+                                        <h5 class="timeline__meta">The Garage at Northwestern University</h5>
+                                        <p class="timeline__timeframe">February 2024 - Present</p>
+                                    </div>
+                                    <div class="timeline__desc">
+                                        <p>Proficient in designing and developing user-centric websites and interfaces for student startups, with a focus on intuitive navigation, visual coherence, and aesthetic appeal. Adept at leveraging modern design principles and advanced technologies such as HTML5, CSS3, JavaScript, and React to enhance online presence and deliver engaging, high-performance user experiences.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline__block">
+                                    <div class="timeline__bullet"></div>
+                                    <div class="timeline__header">
+                                        <h4 class="timeline__title">Undergraduate Developer and Researcher</h4>
+                                        <h5 class="timeline__meta">TIILT Lab, Evanston, IL</h5>
+                                        <p class="timeline__timeframe">May 2023 - Present</p>
+                                    </div>
+                                    <div class="timeline__desc">
+                                        <p>Manager of the Gesture-Craft Team in the Technological Innovations for Inclusive Learning and Teaching (TIILT) Lab, leading research and development initiatives. Conducted comprehensive research on the role of gestures in educational settings, investigating their cognitive benefits and impact on learning environments. Developed a Python-based gesture recognition interface using camera inputs to interpret hand gestures for human-computer interaction. Tailored the interface for children, integrating it into Minecraft to enhance learning through immersive, gesture-driven experiences (Gesture-Craft).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                        </div> <!-- end timeline -->
+                        
+                    </div> <!-- end column -->
+
+
+                </div> <!-- end about-timelines -->
+
+            </section> <!-- end s-about -->
+
+
+            <!-- ### works
+            ================================================== -->
+            <section id="works" class="s-works target-section">
+
+
+                <div class="row works-portfolio">
+
+                    <div class="column lg-12" data-animate-block>
+
+                        <h2 class="text-pretitle" style= "font-weight: bold">
+                            ⋆｡°✩ Projects & Creations ✩°｡⋆
+                          </h2>
+                          <p class="h1" data-animate-el>
+                            From web apps to UX research, here's a peek at my work!
+                          </p>
+    
+                        <ul class="folio-list row block-lg-one-half block-stack-on-1000">
+
+                            <ul class="folio-list row block-lg-one-half block-stack-on-1000">
+                                <li class="folio-list__item column" data-animate-el>
+                                    <a class="folio-list__item-link" href="#modal-01">
+                                        <div class="folio-list__item-pic">
+                                            <img src="images/w1.PNG" alt="Gesture-Craft Interface">
+                                        </div>
+                                        <div class="folio-list__item-text">
+                                            <div class="folio-list__item-cat">Educational Technology</div>
+                                            <div class="folio-list__item-title" style="color: #084211; font-weight: bold;">Gesture-Craft</div>
+                                        </div>
+                                    </a>
+                                    <a class="folio-list__proj-link" href="[your-github-link]" title="project link">
+                                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            
+                                <li class="folio-list__item column" data-animate-el>
+                                    <a class="folio-list__item-link" href="#modal-02">
+                                        <div class="folio-list__item-pic">
+                                            <img src="images/plate.png" alt="Dine-In Wildcat Interface">
+                                        </div>
+                                        <div class="folio-list__item-text">
+                                            <div class="folio-list__item-cat">Web + App Development</div>
+                                            <div class="folio-list__item-title" style="color: #084211; font-weight: bold;">Split & Dine-in Wildcat</div>
+                                        </div>
+                                    </a>
+                                    <a class="folio-list__proj-link" href="[your-github-link]" title="project link">
+                                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            
+                                <li class="folio-list__item column" data-animate-el>
+                                    <a class="folio-list__item-link" href="#modal-03">
+                                        <div class="folio-list__item-pic">
+                                            <img src="images/hawa.JPG" alt="Split App Interface">
+                                        </div>
+                                        <div class="folio-list__item-text">
+                                            <div class="folio-list__item-cat">Mobile App Development</div>
+                                            <div class="folio-list__item-title" style="color: #084211; font-weight: bold;">Hawa</div>
+                                        </div>
+                                    </a>
+                                    <a class="folio-list__proj-link" href="[your-github-link]" title="project link">
+                                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            
+                                <li class="folio-list__item column" data-animate-el>
+                                    <a class="folio-list__item-link" href="#modal-04">
+                                        <div class="folio-list__item-pic">
+                                            <img src="images/logo.png" alt="TailorTalk Website">
+                                        </div>
+                                        <div class="folio-list__item-text">
+                                            <div class="folio-list__item-cat">Web Development</div>
+                                            <div class="folio-list__item-title" style="color: #084211; font-weight: bold;">TailorTalk</div>
+                                        </div>
+                                    </a>
+                                    <a class="folio-list__proj-link" href="[your-github-link]" title="project link">
+                                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                            <!-- Modal Templates -->
+                            <div id="modal-01" hidden>
+                                <div class="modal-popup">
+                                    <img src="images/w2.jpg" alt="Gesture-Craft Demo">
+                                    <div class="modal-popup__desc">
+                                        <h5>Gesture-Craft</h5>
+                                        <p>By leveraging gesture recognition technologies, I created a learning environment where children navigate and build within Minecraft using intuitive gestures. This innovative approach promotes spatial reasoning, enhances engagement, and fosters inclusivity, especially benefiting children with disabilities.</p>
+                                        <ul class="modal-popup__cat">
+                                            <li>User Research</li>
+                                            <li>Interaction Design</li>
+                                            <li>Python</li>
+                                            <li>OpenCV</li>
+                                            <li>MediaPipe</li>
+                                            <li>Minecraft API</li>
+                                        </ul>
+                                    </div>
+                                    <a href="gc.html" class="modal-popup__details">View Project</a>
+                                </div>
+                            </div>
+                            
+                            <div id="modal-02" hidden>
+                                <div class="modal-popup">
+                                    <div class="modal-popup__desc">
+                                        <h5>Dine-In Wildcat</h5>
+                                        <h5 style="color: white;"> . </h5>
+                                        <p>Revolutionizing the dining experience for Northwestern students and Evanston explorers. This app seamlessly connects users with local restaurants, offering exclusive discounts and personalized recommendations. Built with modern technologies for dynamic content and real-time updates.</p>
+                                        <ul class="modal-popup__cat">
+                                            <li>JavaScript</li>
+                                            <li>HTML5/CSS3</li>
+                                            <li>React Native</li>
+                                            <li>Firebase</li>
+                                            <li>API Integration</li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-popup__desc">
+                                        <h5>Split</h5>
+                                        <p>Designed to streamline the process of dividing dinner bills among friends. Users can effortlessly calculate tax, tip, and split amounts. Handles complex scenarios like uneven splits and allows users to exclude specific items for fairness.</p>
+                                        <ul class="modal-popup__cat">
+                                            <li>HTML5/CSS3</li>
+                                            <li>JavaScript</li>
+                                            <li>jQuery</li>
+                                            <li>Bootstrap</li>
+                                            <li>React</li>
+                                        </ul>
+                                    </div>
+                                    <a href="split.html" class="modal-popup__details">View Project</a>
+                                </div>
+                            </div>
+                            
+                            <div id="modal-03" hidden>
+                                <div class="modal-popup">
+                                    <img src="images/hawa.JPG" alt="Hawa App Interface">
+                                    <div class="modal-popup__desc">
+                                        <h5>Hawa</h5>
+                                        <p>Islamic community hub app that helps users seamlessly connect with their faith and community. It offers features such as spiritual goal tracking, customizable profiles, interactive learning sections, and tools for building meaningful connections with peers and alumni.</p>
+                                        <ul class="modal-popup__cat">
+                                            <li>HTML5/CSS3</li>
+                                            <li>JavaScript</li>
+                                            <li>jQuery</li>
+                                            <li>Bootstrap</li>
+                                            <li>React</li>
+                                        </ul>
+                                    </div>
+                                    <a href="hawa.html" class="modal-popup__details">View Project</a>
+                                </div>
+                            </div>
+                            
+                            <div id="modal-04" hidden>
+                                <div class="modal-popup">
+                                    <img src="images/info.png" alt="TailorTalk Website">
+                                    <div class="modal-popup__desc">
+                                        <h5>TailorTalk Website</h5>
+                                        <p>Transformed TailorTalk's website to integrate AI into the creative writing process. Revamped the site to highlight innovative features such as the Character Builder, Dialogue Generator, and Storyline Organizer. Ensured a futuristic yet user-friendly design.</p>
+                                        <ul class="modal-popup__cat">
+                                            <li>Web Development</li>
+                                            <li>HTML</li>
+                                            <li>CSS</li>
+                                            <li>UI Design</li>
+                                            <li>GitHub</li>
+                                        </ul>
+                                    </div>
+                                    <a href="tt.html" class="modal-popup__details">View Project</a>
+                                </div>
+                            </div><!-- end modal -->
+
+                </div> <!-- end works-portfolio -->
+
+
+            </section> <!-- end s-works -->
+
+
+            <!-- ### contact
+            ================================================== -->
+            <section class="s-contact target-section" id="contact">
+                <!-- Background Decoration -->
+            
+                <section class="s-contact target-section" id="contact">
+                    <div class="contact-container" style="
+                        border: 2px solid var(--color-1);
+                        border-radius: 12px;
+                        padding: var(--vspace-1_5);
+                        margin: var(--vspace-2) auto;
+                        width: 95%; /* Increased width */
+                        max-width: 1600px; /* Increased max-width */
+                        position: relative;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                    ">
+                        <!-- Corner Decorations -->
+                        <div class="corner-decoration" style="position: absolute; top: -2px; left: -2px; width: 40px; height: 40px; border-left: 4px solid var(--color-1); border-top: 4px solid var(--color-1); border-radius: 8px 0 0 0;"></div>
+                        <div class="corner-decoration" style="position: absolute; top: -2px; right: -2px; width: 40px; height: 40px; border-right: 4px solid var(--color-1); border-top: 4px solid var(--color-1); border-radius: 0 8px 0 0;"></div>
+                        <div class="corner-decoration" style="position: absolute; bottom: -2px; left: -2px; width: 40px; height: 40px; border-left: 4px solid var(--color-1); border-bottom: 4px solid var(--color-1); border-radius: 0 0 0 8px;"></div>
+                        <div class="corner-decoration" style="position: absolute; bottom: -2px; right: -2px; width: 40px; height: 40px; border-right: 4px solid var(--color-1); border-bottom: 4px solid var(--color-1); border-radius: 0 0 8px 0;"></div>
+                
+                        <div class="row" style="display: flex; flex-wrap: wrap; align-items: center;">
+                            <!-- Left: Title and Contact Info -->
+                            <div class="column lg-4 md-6 tab-12" style="padding: var(--vspace-0_75);">
+                                <h2 class="text-pretitle" style="color: var(--color-1); margin-bottom: var(--vspace-0_5);">
+                                    Thanks for Visiting!
+                                </h2>
+                                <p class="h1" style="color: var(--color-white); margin-bottom: var(--vspace-1); font-size: var(--text-xl);">
+                                    Wanna talk more? Awesome, me too! Let's keep in touch!
+                                </p>
+                                <div class="contact-links" style="margin-top: var(--vspace-0_75);">
+                                    <h3 class="text-pretitle" style="margin-bottom: var(--vspace-0_5);">Reach me at</h3>
+                                    <a href="mailto:jannahissa2026@u.northwestern.edu" class="mailtoui block hover:text-white transition-colors duration-300">
+                                        My Email
+                                    </a>
+                                    <div class="social-links" style="margin-top: var(--vspace-0_5);">
+                                        <a href="https://www.linkedin.com/in/jannah-issa" class="block hover:text-white transition-colors duration-300">
+                                            LinkedIn
+                                        </a>
+                                        <a href="https://github.com/Jannahissa" class="block hover:text-white transition-colors duration-300">
+                                            GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Center: Photo -->
+                            <div class="column lg-4 md-6 tab-12" style="padding: var(--vspace-0_75);">
+                                <div class="contact-photo" style="
+                                    padding: var(--vspace-0_5);
+                                    background: rgba(255, 255, 255, 0.03);
+                                    border-radius: 8px;
+                                    border: 1px solid rgba(255, 255, 255, 0.1);
+                                ">
+                                    <img src="images/jan.jpg" alt="Contact Photo" style="
+                                        width: 100%;
+                                        min-height: 400px;
+                                        max-height: 300px;
+                                        object-fit: cover;
+                                        border-radius: 8px;
+                                        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                                    ">
+                                </div>
+                            </div>
+                
+                            <!-- Right: Button -->
+                            <div class="column lg-4 md-12 tab-12" style="padding: var(--vspace-0_75);">
+                                <a href="mailto:jannahissa2026@u.northwestern.edu" 
+                                   class="btn btn--medium mailtoui contact-btn"
+                                   style="
+                                       background-color: var(--color-1);
+                                       color: var(--color-black);
+                                       width: 100%;
+                                       text-align: center;
+                                       border-radius: 4px;
+                                       transition: all 0.3s ease;
+                                       display: block;
+                                   ">
+                                    Say Hello
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <style>
+                /* Hover Effects */
+                .contact-links a:hover {
+                    color: var(--color-1);
+                    transform: translateX(5px);
+                    transition: all 0.3s ease;
+                }
+                
+                .contact-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                }
+                
+                /* Responsive Adjustments */
+                @media screen and (max-width: 800px) {
+                    .contact-container {
+                        width: 90%;
+                        padding: var(--vspace-1);
+                    }
+                    
+                    .contact-photo {
+                        max-width: 300px;
+                        margin: var(--vspace-1) auto;
+                    }
+                    
+                    .contact-btn {
+                        margin-top: var(--vspace-1);
+                    }
+                }
+                
+                @media screen and (max-width: 600px) {
+                    .contact-container {
+                        width: 95%;
+                        padding: var(--vspace-0_75);
+                    }
+                    
+                    .corner-decoration {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                </style>
+
+        <!-- ## footer
+        ================================================== -->
+        <footer class="s-footer">
+
+            <div class="row">
+                <div class="column ss-copyright">
+                    <span>You made it to the end!</span> 
+                </div>
+
+                <div class="ss-go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>
+                    </a>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
 
-<footer class="footer">
-    <div class="scallop-down-3"></div>  
-    </div>
-    <div class="footer-text">
-        <p> Jannah Issa <3 </p>
-        <p>Contact me: <a href="mailto:jannahissa2026@u.northwestern.edu">jannahissa2026@u.northwestern.edu</a></p>
-        <p>Find me on <a href="https://github.com/Jannahissa" target="_blank">Github</a> and <a href="https://www.linkedin.com/in/jannah-issa" target="_blank">LinkedIn!</a></p>
-    </div>
-</footer>
+        </footer> <!-- end s-footer -->
+
+    </div> <!-- end -s-pagewrap -->
 
 
-
-
-
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
