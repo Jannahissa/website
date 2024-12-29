@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Gallery | Jannah Issa</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 2rem;
+            background: rgba(234, 190, 124, 0.05);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .grid-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            background: rgba(18, 162, 64, 0.1);
+            padding: 1rem;
+        }
+
+        .grid-controls .btn {
+            background-color: #6aa392;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .grid-controls .btn:hover,
+        .grid-controls .btn.active {
+            background-color: #f79a71;
+        }
+
+        @media screen and (max-width: 800px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Site Header -->
+    <header class="s-header">
+        <!-- Header content from main site -->
+    </header>
+
+    <!-- Back Button -->
+    <div class="row">
+        <div class="column">
+            <a href="index.html#works" class="btn btn--stroke" style="margin: 2rem 0 0 2rem;">← Back to Projects</a>
+        </div>
+    </div>
+
+    <section class="s-project">
+        <div class="row">
+            <div class="column">
+                <div class="section-intro">
+                    <h2 class="text-pretitle typewriter-title">Film Photography ★</h2>
+                    <h1 class="text-huge-title parallax-section" data-speed="0.3">Film & Friends</h1>
+                    <p class="h1">Moments Captured on Film ✨</p>
+                </div>
+
+                <div class="grid-controls">
+                    <button class="btn" onclick="setColumns(1)">1 Column</button>
+                    <button class="btn" onclick="setColumns(2)">2 Columns</button>
+                    <button class="btn active" onclick="setColumns(3)">3 Columns</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <img src="film/1.jpg" alt="Film Photo" class="gallery-image">
+                    <img src="film/2.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/3.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/4.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/5.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/6.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/7.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/8.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/9.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/10.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/11.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/12.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/13.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/14.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/15.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/16.JPG" alt="Film Photo" class="gallery-image">
+                    <img src="film/17.jpeg" alt="Film Photo" class="gallery-image">
+                    <img src="film/18.jpeg" alt="Film Photo" class="gallery-image">
+                    <img src="film/19.jpeg" alt="Film Photo" class="gallery-image">
+                    <img src="film/20.jpeg" alt="Film Photo" class="gallery-image">
+                    <img src="film/21.jpeg" alt="Film Photo" class="gallery-image">
+                    <img src="film/22.jpeg" alt="Film Photo" class="gallery-image">
+                    <img src="film/23.jpeg" alt="Film Photo" class="gallery-image">
+                    <img src="film/24.jpg" alt="Film Photo" class="gallery-image">
+                    <img src="film/25.JPG" alt="Film Photo" class="gallery-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="s-footer">
+        <div class="row">
+            <div class="column">
+                <div class="ss-copyright">
+                    <span>Design by Jannah Issa</span>
+                </div>
+            </div>
+
+            <div class="ss-go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 0l8 8h-6v16h-4v-16h-6z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function setColumns(columnCount) {
+            const galleryGrid = document.querySelector('.gallery-grid');
+            const buttons = document.querySelectorAll('.btn');
+            
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Set grid columns
+            galleryGrid.style.gridTemplateColumns = `repeat(${columnCount}, 1fr)`;
+        }
+    </script>
+</body>
+</html>
