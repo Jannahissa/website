@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Indie+Flower&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawa - Jannah's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Caveat', cursive;
+            background: #c5e5f8;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        /* Floating clouds animation */
+        .clouds {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 100px;
+            animation: float 60s infinite linear;
+        }
+
+        .cloud::before, .cloud::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 100px;
+        }
+
+        .cloud1 { width: 100px; height: 40px; top: 10%; left: -10%; animation-duration: 50s; }
+        .cloud1::before { width: 50px; height: 50px; top: -25px; left: 10px; }
+        .cloud1::after { width: 60px; height: 40px; top: -15px; right: 10px; }
+
+        .cloud2 { width: 120px; height: 50px; top: 30%; left: -15%; animation-duration: 70s; }
+        .cloud2::before { width: 60px; height: 60px; top: -30px; left: 15px; }
+        .cloud2::after { width: 70px; height: 50px; top: -20px; right: 15px; }
+
+        .cloud3 { width: 80px; height: 35px; top: 60%; left: -10%; animation-duration: 55s; }
+        .cloud3::before { width: 45px; height: 45px; top: -20px; left: 10px; }
+        .cloud3::after { width: 50px; height: 35px; top: -15px; right: 10px; }
+
+        @keyframes float {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120vw); }
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            transform: rotate(-5deg);
+        }
+
+        .back-btn:hover {
+            transform: rotate(0deg) scale(1.1);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+        }
+
+        /* Project Header */
+        .project-header {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.2));
+        }
+
+        .project-name {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            transform: rotate(-2deg);
+            line-height: 1.1;
+        }
+
+        .project-tagline {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #34495e;
+            transform: rotate(1deg);
+            font-weight: 500;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.3rem;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+        }
+
+        .meta-item:nth-child(2) {
+            transform: rotate(1deg);
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        /* Content Container */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Overview Section */
+        .overview-section {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: #ffeb99;
+            z-index: -1;
+            transform: rotate(-1deg);
+        }
+
+        .overview-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: #ffe6f0;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            border: 2px solid #2c3e50;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            margin-bottom: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .photo-card {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+            transform: rotate(1deg);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:nth-child(2) {
+            transform: rotate(-1deg);
+        }
+
+        .photo-card:nth-child(3) {
+            transform: rotate(2deg);
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #e8e8e8;
+            border: 2px solid #2c3e50;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            font-size: 1.3rem;
+            color: #555;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            background: #d4f1f4;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-tag {
+            background: white;
+            color: #2c3e50;
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            border: 3px solid #2c3e50;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+        }
+
+        .tech-tag:nth-child(2n) {
+            transform: rotate(2deg);
+        }
+
+        /* Design Philosophy Section */
+        .philosophy-section {
+            background: #e8f5e9;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(0.5deg);
+        }
+
+        .philosophy-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        .project-footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 1.3rem;
+            color: #7f8c8d;
+        }
+
+        /* Navigation */
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 4rem 0;
+            padding: 0 2rem;
+        }
+
+        .nav-btn {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 1.5rem 2rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+            .project-name {
+                font-size: 3.5rem;
+            }
+
+            .project-tagline {
+                font-size: 1.5rem;
+            }
+
+            .project-nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Clouds -->
+    <div class="clouds">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+    </div>
+
+    <!-- Back Button -->
+    <a href="index.html#projects" class="back-btn">←</a>
+
+    <!-- Project Header -->
+    <div class="project-header">
+        <div class="project-icon">★</div>
+        <h1 class="project-name">Hawa</h1>
+        <div class="project-tagline">Islamic Personal & Community Hub</div>
+        
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Role:</span> UX/UI Designer & Developer
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Platform:</span> Mobile App Development ✨
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="content-container">
+        <!-- Overview -->
+        <div class="overview-section">
+            <h2 class="section-title">Overview ★</h2>
+            <p class="overview-text">
+                Hawa is an innovative mobile application designed to create a holistic digital space for Muslims to track their spiritual journey, connect with community, and access personalized Islamic resources. As both UX/UI Designer and Developer, I crafted an intuitive and aesthetically pleasing platform that bridges technology with spiritual growth.
+            </p>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="photo-gallery">
+            <h2 class="section-title">Design Showcase</h2>
+            <div class="gallery-grid">
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <img src="profile.png">
+                    </div>
+                    <p class="photo-caption">User profile and spiritual goal tracking interface</p>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <img src="cal.png">
+                    </div>
+                    <p class="photo-caption">Community connection and interactive learning sections</p>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <img src="fold.png">
+                    </div>
+                    <p class="photo-caption">Design system and brand identity development</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features-section">
+            <h2 class="section-title">Key Features ✨</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">👤</div>
+                    <div class="feature-text">Customizable user profiles</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-text">Spiritual goal tracking dashboard</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📚</div>
+                    <div class="feature-text">Interactive learning sections</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-text">Community connection features</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💡</div>
+                    <div class="feature-text">Personalized resource recommendations</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="tech-stack">
+            <h2 class="section-title">Key Technologies ★</h2>
+            <div class="tech-tags">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">UX/UI Design</span>
+                <span class="tech-tag">Mobile Development</span>
+                <span class="tech-tag">Community Platform</span>
+            </div>
+        </div>
+
+        <!-- Design Philosophy -->
+        <div class="philosophy-section">
+            <h2 class="section-title">Design Philosophy ★</h2>
+            <p class="philosophy-text">
+                The design of Hawa was driven by a commitment to creating an inclusive, intuitive, and spiritually enriching digital experience. I focused on developing an interface that feels both modern and respectful, using a color palette and design language that resonates with the app's spiritual purpose.
+            </p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="project-nav">
+        <a href="peer-pressure.html" class="nav-btn">
+            ← Previous Project
+        </a>
+        <a href="index.html#projects" class="nav-btn">
+            ← Back to Projects
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="project-footer">
+        Design by Jannah Issa
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Indie+Flower&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MileagePLus- Jannah's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Caveat', cursive;
+            background: #c5e5f8;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        /* Password Overlay */
+        #passwordOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+
+        .password-box {
+            background: white;
+            border: 4px solid #2c3e50;
+            border-radius: 25px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: rotate(-2deg) translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(-2deg) translateY(0);
+            }
+        }
+
+        .password-icon {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .password-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .password-subtitle {
+            font-size: 1.3rem;
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .password-input:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        .password-btn {
+            width: 100%;
+            padding: 1rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: #3498db;
+            color: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+        }
+
+        .password-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+        }
+
+        .password-btn:active {
+            transform: translateY(0);
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: 600;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        /* Hide main content initially */
+        .main-content {
+            display: none;
+        }
+
+        /* Floating clouds animation */
+        .clouds {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 100px;
+            animation: float 60s infinite linear;
+        }
+
+        .cloud::before, .cloud::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 100px;
+        }
+
+        .cloud1 { width: 100px; height: 40px; top: 10%; left: -10%; animation-duration: 50s; }
+        .cloud1::before { width: 50px; height: 50px; top: -25px; left: 10px; }
+        .cloud1::after { width: 60px; height: 40px; top: -15px; right: 10px; }
+
+        .cloud2 { width: 120px; height: 50px; top: 30%; left: -15%; animation-duration: 70s; }
+        .cloud2::before { width: 60px; height: 60px; top: -30px; left: 15px; }
+        .cloud2::after { width: 70px; height: 50px; top: -20px; right: 15px; }
+
+        .cloud3 { width: 80px; height: 35px; top: 60%; left: -10%; animation-duration: 55s; }
+        .cloud3::before { width: 45px; height: 45px; top: -20px; left: 10px; }
+        .cloud3::after { width: 50px; height: 35px; top: -15px; right: 10px; }
+
+        @keyframes float {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120vw); }
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            transform: rotate(-5deg);
+        }
+
+        .back-btn:hover {
+            transform: rotate(0deg) scale(1.1);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+        }
+
+        /* Project Header */
+        .project-header {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.2));
+        }
+
+        .project-name {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            transform: rotate(-2deg);
+            line-height: 1.1;
+        }
+
+        .project-tagline {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #34495e;
+            transform: rotate(1deg);
+            font-weight: 500;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.3rem;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+        }
+
+        .meta-item:nth-child(2) {
+            transform: rotate(1deg);
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        /* Content Container */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Overview Section */
+        .overview-section {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: #ffeb99;
+            z-index: -1;
+            transform: rotate(-1deg);
+        }
+
+        .overview-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            margin-bottom: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .photo-card {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+            transform: rotate(1deg);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:nth-child(2) {
+            transform: rotate(-1deg);
+        }
+
+        .photo-card:nth-child(3) {
+            transform: rotate(2deg);
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #e8e8e8;
+            border: 2px solid #2c3e50;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: fit;
+        }
+
+        .photo-caption {
+            font-size: 1.3rem;
+            color: #555;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: #ffe6f0;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(0.5deg);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            border: 2px solid #2c3e50;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+
+        /* Process Section */
+        .process-section {
+            margin-bottom: 3rem;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .process-step {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            transform: rotate(-0.5deg);
+        }
+
+        .process-step:nth-child(even) {
+            transform: rotate(0.5deg);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #ffd93d;
+            border: 3px solid #2c3e50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            font-size: 1.3rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            background: #d4f1f4;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-tag {
+            background: white;
+            color: #2c3e50;
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            border: 3px solid #2c3e50;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+        }
+
+        .tech-tag:nth-child(2n) {
+            transform: rotate(2deg);
+        }
+
+        /* Results/Impact Section */
+        .results-section {
+            background: #fff4e6;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(0.5deg);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .result-card {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+        }
+
+        .result-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            font-size: 1.3rem;
+            color: #2c3e50;
+        }
+
+        /* Navigation */
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 4rem 0;
+            padding: 0 2rem;
+        }
+
+        .nav-btn {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 1.5rem 2rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+            .project-name {
+                font-size: 3.5rem;
+            }
+
+            .project-tagline {
+                font-size: 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-nav {
+                flex-direction: column;
+            }
+
+            .password-box {
+                padding: 2rem;
+            }
+
+            .password-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Password Overlay -->
+    <div id="passwordOverlay">
+        <div class="password-box">
+            <div class="password-icon">🔒</div>
+            <h2 class="password-title">Protected Project</h2>
+            <p class="password-subtitle">Enter password to view this case study</p>
+            <input type="password" id="passwordInput" class="password-input" placeholder="Enter password..." autofocus>
+            <button onclick="checkPassword()" class="password-btn">Unlock Project</button>
+            <div id="errorMessage" class="error-message">❌ Incorrect password. Please try again.</div>
+        </div>
+    </div>
+
+    <!-- Main Content (hidden until password is correct) -->
+    <div class="main-content">
+        <!-- Floating Clouds -->
+        <div class="clouds">
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="cloud cloud3"></div>
+        </div>
+
+        <!-- Back Button -->
+        <a href="index.html#projects" class="back-btn">←</a>
+
+        <!-- Project Header -->
+        <div class="project-header">
+            <div class="project-icon">✈️</div>
+            <h1 class="project-name">MileagePlus Dashboard</h1>
+            <div class="project-tagline">Converting Competitors to Loyalty Members</div>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role:</span> Product Designer
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline:</span> Summer 2025
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Company:</span> United Airlines
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="content-container">
+            <!-- Overview -->
+            <div class="overview-section">
+                <h2 class="section-title">Overview</h2>
+                <p class="overview-text">
+                    As part of United's Product Design team, I designed and developed a digital dashboard for the "Frequent Flyer Switchers" campaign. The goal was to convert loyal customers from competing airlines (Delta, American) to MileagePlus by showcasing personalized benefits and rewards.
+                </p>
+                <p class="overview-text">
+                    The dashboard integrated behavioral design principles and data-driven insights to create compelling conversion experiences that drove engagement and loyalty program sign-ups.
+                </p>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="photo-gallery">
+                <h2 class="section-title">Demo Video</h2>
+                <div style="display: flex; justify-content: center; margin-top: 2rem;">
+                    <div class="photo-card" style="max-width: 400px; transform: rotate(0deg);">
+                        <div class="photo-placeholder" style="height: 700px;">
+                            <img src="demovid.mov" alt="MileagePlus Dashboard Demo">
+                        </div>
+                        <p class="photo-caption">Interactive dashboard demo showing the complete user experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features-section">
+                <h2 class="section-title">Key Features</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-text">Personalized benefit comparisons based on user's current airline</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-text">Real-time miles calculator showing potential earnings</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎁</div>
+                        <div class="feature-text">Exclusive sign-up bonuses and incentives</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔔</div>
+                        <div class="feature-text">Behavioral nudges to encourage immediate action</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div class="process-section">
+                <h2 class="section-title">Design Process</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Research & Discovery</h3>
+                            <p class="step-description">Analyzed competitor loyalty programs, conducted user interviews with frequent flyers, and identified key pain points in the switching process.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Ideation & Wireframing</h3>
+                            <p class="step-description">Created low-fidelity wireframes exploring different dashboard layouts, tested information hierarchy, and refined user flows based on stakeholder feedback.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Design & Prototyping</h3>
+                            <p class="step-description">Developed high-fidelity mockups in Figma, created interactive prototypes, and collaborated with the creative team on brand consistency.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Testing & Iteration</h3>
+                            <p class="step-description">Conducted A/B testing on key conversion points, gathered analytics data, and refined the design based on user behavior patterns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="tech-stack">
+                <h2 class="section-title">Tools & Technologies</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag">Figma</span>
+                    <span class="tech-tag">Adobe Creative Suite</span>
+                    <span class="tech-tag">Google Analytics</span>
+                    <span class="tech-tag">Quantum Metric</span>
+                    <span class="tech-tag">Prototyping</span>
+                    <span class="tech-tag">A/B Testing</span>
+                </div>
+            </div>
+
+            <!-- Results -->
+            
+        </div>
+
+        <!-- Navigation -->
+        <div class="project-nav">
+            <a href="index.html" class="nav-btn">
+                ← Home
+            </a>
+            <a href="spotify.html" class="nav-btn">
+                Next Project →
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Set your password here
+        const correctPassword = "wheelsup";
+
+        // Allow Enter key to submit
+        document.getElementById('passwordInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        function checkPassword() {
+            const userInput = document.getElementById('passwordInput').value;
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (userInput === correctPassword) {
+                // Correct password - hide overlay and show content
+                document.getElementById('passwordOverlay').style.display = 'none';
+                document.querySelector('.main-content').style.display = 'block';
+            } else {
+                // Wrong password - show error message
+                errorMessage.classList.add('show');
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordInput').focus();
+                
+                // Hide error message after 3 seconds
+                setTimeout(() => {
+                    errorMessage.classList.remove('show');
+                }, 3000);
+            }
+        }
+    </script>
+
+</body>
+</html>

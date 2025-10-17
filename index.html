@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Indie+Flower&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jannah's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Caveat', cursive;
+            background: #c5e5f8;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        /* Doodles in background */
+        .doodles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.05;
+        }
+
+/* General Cloud Styles */
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 50px;
+  opacity: 0.9;
+  animation: moveCloud linear infinite;
+}
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* Animation for left-to-right */
+@keyframes moveCloud {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+
+/* Animation for right-to-left */
+@keyframes moveCloudReverse {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-120vw); }
+}
+
+/* Clouds from the LEFT */
+.cloud1 { width: 100px; height: 40px; top: 10%; left: -10%; animation-duration: 50s; }
+.cloud1::before { width: 50px; height: 50px; top: -25px; left: 10px; }
+.cloud1::after { width: 60px; height: 40px; top: -15px; right: 10px; }
+
+.cloud2 { width: 120px; height: 50px; top: 30%; left: -15%; animation-duration: 70s; }
+.cloud2::before { width: 60px; height: 60px; top: -30px; left: 15px; }
+.cloud2::after { width: 70px; height: 50px; top: -20px; right: 15px; }
+
+.cloud3 { width: 80px; height: 35px; top: 60%; left: -10%; animation-duration: 55s; }
+.cloud3::before { width: 45px; height: 45px; top: -20px; left: 10px; }
+.cloud3::after { width: 50px; height: 35px; top: -15px; right: 10px; }
+
+/* Clouds from the RIGHT */
+.cloud4 { width: 90px; height: 38px; top: 20%; right: -12%; animation: moveCloudReverse 65s linear infinite; }
+.cloud4::before { width: 48px; height: 48px; top: -22px; left: 12px; }
+.cloud4::after { width: 55px; height: 38px; top: -18px; right: 12px; }
+
+.cloud5 { width: 110px; height: 45px; top: 45%; right: -20%; animation: moveCloudReverse 60s linear infinite; }
+.cloud5::before { width: 55px; height: 55px; top: -28px; left: 14px; }
+.cloud5::after { width: 65px; height: 45px; top: -22px; right: 14px; }
+
+.cloud6 { width: 95px; height: 42px; top: 75%; right: -11%; animation: moveCloudReverse 58s linear infinite; }
+.cloud6::before { width: 50px; height: 50px; top: -24px; left: 11px; }
+.cloud6::after { width: 58px; height: 42px; top: -20px; right: 11px; }
+
+
+.cloud8 { width: 100px; height: 40px; top: 50%; left: -20%; animation-duration: 80s; }
+.cloud8::before { width: 50px; height: 50px; top: -25px; left: 12px; }
+.cloud8::after { width: 60px; height: 40px; top: -15px; right: 10px; }
+
+
+
+/* Sun */
+.sun {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at 30% 30%, #fff7c0, #ffd93d);
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(255, 223, 100, 0.8);
+  animation: sun-glow 5s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes sun-glow {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+
+
+        @keyframes float {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120vw); }
+        }
+        .doodle {
+            position: absolute;
+            font-size: 3rem;
+            animation: float-doodle 20s infinite ease-in-out;
+        }
+
+        .doodle1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .doodle2 { top: 30%; right: 15%; animation-delay: 3s; }
+        .doodle3 { bottom: 20%; left: 20%; animation-delay: 6s; }
+        .doodle4 { top: 60%; right: 25%; animation-delay: 9s; }
+
+        @keyframes float-doodle {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Hero Section */
+  
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-stamp {
+            width: 140px;
+            height: 140px;
+            border: 4px solid #c73131;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            background: #c5e5f8;
+            transform: rotate(-8deg);
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .hero-stamp::after {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border: 2px dashed #c73131;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .stamp-icon {
+            font-size: 3rem;
+            color: #c73131;
+        }
+
+        .stamp-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c73131;
+            margin-top: 0.3rem;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            transform: rotate(-2deg);
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #34495e;
+            transform: rotate(1deg);
+            font-weight: 500;
+        }
+
+        .bio {
+            max-width: 700px;
+            line-height: 1.9;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 3px solid #2c3e50;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            font-size: 1.4rem;
+            transform: rotate(1deg);
+            position: relative;
+        }
+
+        .bio::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            width: 40px;
+            height: 20px;
+            background: #ffd93d;
+            border: 2px solid #2c3e50;
+            border-radius: 20px 20px 0 0;
+            transform: rotate(5deg);
+        }
+
+        /* Passport Card - Open Book Style */
+        .passport-card {
+            max-width: 700px;
+            margin: 2.5rem auto;
+            display: flex;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transform: rotate(-1deg);
+            position: relative;
+            height: 340px;
+        }
+
+        /* Center binding shadow */
+        .passport-card::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(to right, 
+                rgba(0,0,0,0.3) 0%, 
+                rgba(0,0,0,0.1) 50%, 
+                rgba(0,0,0,0.3) 100%);
+            transform: translateX(-45%);
+            z-index: 10;
+        }
+
+        /* Left page - Cover */
+        .passport-left {
+            width: 50%;
+            background: #1f176b;
+            border: 2px solid #000000;
+            border-right: 2px solid #2c3e50;
+            border-radius: 8px 0 0 8px;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .passport-left::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10%;
+            bottom: 10%;
+            width: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .passport-emblem {
+            font-size: 6rem;
+            color: #c5e5f8;
+            margin-bottom: .5rem;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .passport-country {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #838ead;
+            margin-bottom: 0.5rem;
+        }
+
+        .passport-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffd700;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .passport-subtitle {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 1px;
+        }
+
+        /* Right page - Info */
+        .passport-right {
+            width: 50%;
+            background: #dce8f5;
+            border: 2px solid #000000;
+            border-left: 2px solid #2c3e50;
+            border-radius: 0 8px 8px 0;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .passport-right::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10%;
+            bottom: 10%;
+            width: 1px;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .passport-page-number {
+            position: absolute;
+            bottom: 1rem;
+            right: 1.5rem;
+            font-size: 0.75rem;
+            color: #554b4b;
+            font-family: 'Caveat', cursive;
+        }
+
+        .passport-content {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .passport-photo {
+            width: 100px;
+            height: 130px;
+            border: 2px solid #2c3e50;
+            border-radius: 4px;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            flex-shrink: 0;
+            overflow: hidden;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .passport-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .passport-info {
+            flex: 1;
+            display: flex;
+            font-family: 'Caveat', cursive;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .passport-field {
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 0.3rem;
+        }
+
+        .passport-label {
+            font-size: 1.2rem;
+            color: #3d1414;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.1rem;
+            font-family: 'Caveat', cursive;
+            font-weight: 600;
+        }
+
+        .passport-value {
+            font-size: 1.2rem;
+            font-family: 'Caveat', cursive;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .passport-stamps {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+            flex-wrap: wrap;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .passport-stamp-mini {
+            font-size: 1.8rem;
+            opacity: 0.4;
+            transform: rotate(-5deg);
+        }
+
+        .passport-stamp-mini:nth-child(2) {
+            transform: rotate(8deg);
+        }
+
+        .passport-stamp-mini:nth-child(3) {
+            transform: rotate(-12deg);
+        }
+
+        .passport-stamp-mini:nth-child(4) {
+            transform: rotate(5deg);
+        }
+        
+
+        /* Section */
+        .section {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            display: inline-block;
+            transform: rotate(-2deg);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: #ffeb99;
+            z-index: -1;
+            transform: rotate(-1deg);
+        }
+
+        .section-subtitle {
+            font-size: 1.6rem;
+            margin-bottom: 3rem;
+            color: #5d6666;
+            transform: rotate(1deg);
+        }
+        
+/*postcards*/
+
+.projects-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 0;
+  background: transparent; 
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-items: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* ====== Postcard Container ====== */
+.project-card {
+  width: 472px;
+  height: 315px;
+  position: relative;
+  perspective: 1200px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+/* Inner wrapper for flipping */
+.project-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.project-card.flipped .project-inner {
+  transform: rotateY(180deg);
+}
+
+/* Prevent drop-down or position shifts */
+.project-card,
+.project-inner,
+.project-front,
+.project-back {
+  transform-origin: center center;
+}
+
+/* ====== Shared Front/Back Styles ====== */
+.project-front,
+.project-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: 2px solid #2c3e50;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  backface-visibility: hidden;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+/* ====== FRONT: Title side ====== */
+.project-front {
+  background: #ffffff;
+  border-image: repeating-linear-gradient(
+      45deg,
+      rgb(255, 255, 255),
+      rgb(225, 116, 116) 10px,
+      #ffffff 10px,
+      #7f8be4 20px
+    )
+    8;
+  border-style: solid;
+  border-width: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #2c3e50;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-front:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+  font-size: 1.8rem;
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.project-stamp {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 1.1rem;
+  border: 2px dashed #2c3e50;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transform: rotate(10deg);
+  background: #fdf1ea;
+  color: #2c3e50;
+}
+
+/* Layout for the back side of postcards */
+.postcard-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.postcard-left,
+.postcard-right {
+  width: 50%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+
+
+/* Right side (text and stamp area) */
+.postcard-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.postcard-stamp {
+  align-self: flex-end;
+  border: 2px dashed #2c3e50;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transform: rotate(4deg);
+  background: #fff4da;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.postcard-right .project-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2c3e50;
+}
+
+.postcard-right .project-tags {
+  margin-top: auto;
+}
+
+/* ====== BACK: Description side ====== */
+.project-back {
+  transform: rotateY(180deg);
+  background: #fffdf9;
+  color: #2c3e50;
+  font-family: "Poppins", sans-serif;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* divider line down the middle like real postcards */
+.project-back::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1.5px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Postcard layout - fix text cutoff */
+.postcard-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Left photo side */
+.postcard-left {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.postcard-photo {
+  width: 80%;
+  height: auto;
+  max-height: 100%;
+  object-fit: fill;
+  
+  
+}
+
+/* Right text side */
+.postcard-right {
+  width: 52%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  overflow-y: auto; /* allows scrolling if text is long */
+}
+
+.postcard-stamp {
+  align-self: flex-end;
+  border: 2px dashed #2c3e50;
+  padding: 0.4rem 0.4rem;
+  font-size: 0.5rem;
+  border-radius: 6px;
+  transform: rotate(4deg);
+  background: #fff4da;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+
+.project-description {
+  font-size: .7rem;
+  font-family: 'Caveat', cursive;
+  line-height: 1;
+  margin: 0.5rem 0;
+  color: #2c3e50;
+  overflow-wrap: break-word;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.project-tag {
+  background: #f3bbbb;
+  color: #3e1510;
+  font-size: 0.9rem;
+  font-family: 'Caveat', cursive;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  border: 2px dashed #c73131;
+}
+.project-btn {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  background: #fae779;
+  color: rgb(31, 26, 53);
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  border: 1px solid #2c3e50;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+  align-self: flex-start;
+}
+
+.project-btn:hover {
+  background: #e85c4a;
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+        /* Skills Cards */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: #ffffff;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            transform: rotate(1deg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:nth-child(2) {
+            background: #ffffff;
+            transform: rotate(-2deg);
+        }
+
+        .skill-card:nth-child(3) {
+            background: #ffffff;
+            transform: rotate(2deg);
+        }
+
+        .skill-card:nth-child(4) {
+            background: #ffffff;
+            transform: rotate(-2deg);
+        }
+
+        .skill-card:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .skill-card::before {
+            content: '📌';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.8rem;
+        }
+
+        .skill-card h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            font-size: 1.4rem;
+            padding: 0.5rem 0;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .skill-card li::before {
+            content: '→';
+            font-weight: bold;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #2c3e50;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            margin-left: 80px;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+            position: relative;
+            transform: rotate(0.5deg);
+        }
+
+        .timeline-item:nth-child(even) {
+            transform: rotate(-0.5deg);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -51px;
+            top: 2rem;
+            width: 25px;
+            height: 25px;
+            background: #ffd93d;
+            border: 3px solid #2c3e50;
+            border-radius: 50%;
+        }
+
+        .timeline-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-date {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .timeline-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            font-size: 1.3rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-box {
+            background: #ffe6f0;
+            border: 4px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+        }
+
+        .contact-text {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            padding: 1rem 2rem;
+            background: white;
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border: 3px solid #2c3e50;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+        }
+
+        /* Wavy divider */
+        .wave-divider {
+            width: 100%;
+            height: 30px;
+            margin: 2rem 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 30'%3E%3Cpath fill='%232c3e50' d='M0,15 Q300,0 600,15 T1200,15 L1200,30 L0,30 Z'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-size: 1200px 30px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .tagline {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                margin-left: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <div class="clouds">
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="cloud cloud4"></div>
+    <div class="cloud cloud5"></div>
+    <div class="cloud cloud6"></div>
+    <!-- Added extras -->
+    <div class="cloud cloud7"></div>
+    <div class="cloud cloud8"></div>
+    <div class="cloud cloud9"></div>
+
+    <div class="sun"></div>
+</div>
+
+
+ 
+
+    <!-- Hero Section -->
+<div class="hero">
+  
+  <h1>hey! welcome to my corner</h1>
+  <div class="tagline">
+      A creative coder,
+      a UX Designer,
+      & a researcher
+  </div>
+  
+  <!-- Passport Card -->
+  <div class="passport-card">
+      <!-- Left Page - Cover -->
+      <div class="passport-left">
+          <div class="passport-emblem">✈︎</div>
+          <div class="passport-country">WORLD CITIZEN</div>
+          <div class="passport-title">PASSPORT</div>
+          <div class="passport-subtitle">CREATIVE EXPLORER</div>
+      </div>
+      
+      <!-- Right Page - Info -->
+      <div class="passport-right">
+          <div class="passport-content">
+              <div class="passport-photo">
+                  <img src="me.jpeg" alt="Jannah">
+              </div>
+              <div class="passport-info">
+                  <div class="passport-field">
+                      <div class="passport-label">Name</div>
+                      <div class="passport-value">Jannah</div>
+                  </div>
+                  <div class="passport-field">
+                      <div class="passport-label">Location</div>
+                      <div class="passport-value">Evanston, IL</div>
+                  </div>
+                  <div class="passport-field">
+                      <div class="passport-label">Status</div>
+                      <div class="passport-value">Student & Creator</div>
+                  </div>
+              </div>
+          </div>
+          <div class="passport-stamps">
+              <span class="passport-stamp-mini">✍︎</span>
+              <span class="passport-stamp-mini">𓆟</span>
+              <span class="passport-stamp-mini">☕︎</span>
+              <span class="passport-stamp-mini">✈︎</span>
+          </div>
+          <div class="passport-page-number">Page 02</div>
+      </div>
+  </div>
+  <!-- <div class="hero-stamp">
+    <div class="stamp-icon">ᯓ ✈︎</div>
+    <div class="stamp-text">Jannah</div>
+</div> -->
+  
+  <div class="bio">
+      I'm a student at Northwestern University studying Cognitive Science, Design, and Human-Computer Interaction exploring the intersection of human behavior and technology. From being published for my research to web dev for startups, shooting film to customizing clothes—I'm always creating, exploring, and learning. Come along for the ride!
+  </div>
+</div>
+
+    <!-- Skills Section -->
+    <div class="section">
+        <h2 class="section-title">What i do</h2>
+        <div class="section-subtitle">my toolkit & skills</div>
+        
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Code</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Swift</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Tools</h3>
+                <ul>
+                    <li>Figma</li>
+                    <li>Adobe Creative Suite</li>
+                    <li>Autodesk</li>
+                    <li>Git</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Design</h3>
+                <ul>
+                    <li>UX Research</li>
+                    <li>Prototyping</li>
+                    <li>Journey Mapping</li>
+                    <li>User Testing</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Research</h3>
+                <ul>
+                    <li>Google Analytics</li>
+                    <li>Quantum Metric</li>
+                    <li>Qualtrics</li>
+                    <li>Usertesting</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects" class="section">
+        <h2 class="section-title">things i've made</h2>
+        <div class="section-subtitle">projects & studies</div>
+        
+        <div class="projects-grid">
+          <div class="project-card" onclick="this.classList.toggle('flipped')">
+            <div class="project-inner">
+              <div class="project-front">
+                <h3 class="project-title">MileagePlus</h3>
+                <div class="project-stamp">✉️</div>
+              </div>
+              <div class="project-back">
+                <div class="postcard-layout">
+                  <div class="postcard-left">
+                    <img src="unmock.png" alt="united Image" class="postcard-photo">
+                  </div>
+                  <div class="postcard-right">
+                    <div class="postcard-stamp">PLACE STAMP HERE</div>
+                    <p class="project-description">
+                      Designed and developed a digital dashboard for the “Frequent Flyer Switchers” campaign to convert users from competing airlines to MileagePlus. 
+                    </p>
+                    <div class="project-tags">
+                      <span class="project-tag">Figma</span>
+                      <span class="project-tag">Adobe Creative Cloud</span>
+                      <a href="mp.html" class="project-btn" >View Project →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" onclick="this.classList.toggle('flipped')">
+            <div class="project-inner">
+              <div class="project-front">
+                <h3 class="project-title">Spotify Student</h3>
+                <div class="project-stamp">✉️</div>
+              </div>
+              <div class="project-back">
+                <div class="postcard-layout">
+                  <div class="postcard-left">
+                    <img src="spotifymock.png" alt="Gesture-Craft Image" class="postcard-photo">
+                  </div>
+                  <div class="postcard-right">
+                    <div class="postcard-stamp">PLACE STAMP HERE</div>
+                    <p class="project-description">
+                      Designed a student-focused UI experience for Spotify called Campus Dashboard, aimed at fostering connection through shared listening habits.                     </p>
+                    <div class="project-tags">
+                      <span class="project-tag">Figma</span>
+                      <span class="project-tag">UX</span>
+                      <span class="project-tag">Prototyping</span>
+                      <a href="spotify.html" class="project-btn" >View Project →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" onclick="this.classList.toggle('flipped')">
+            <div class="project-inner">
+              <div class="project-front">
+                <h3 class="project-title">Peer Pressure</h3>
+                <div class="project-stamp">✉️</div>
+              </div>
+              <div class="project-back">
+                <div class="postcard-layout">
+                  <div class="postcard-left">
+                    <img src="ppmock.png" alt="PP Image" class="postcard-photo">
+                  </div>
+                  <div class="postcard-right">
+                    
+                    <p class="project-description">
+                      Designed and led the UI/UX for Peer Pressure, a social accountability app that encourages positive habit-building through friendly peer influence.                    </p>
+                    <div class="project-tags">
+                      <span class="project-tag">Figma</span>
+                      <span class="project-tag">React Native</span>
+                      <span class="project-tag">Firebase</span>
+                      <a href="pp.html" class="project-btn" >View Project →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" onclick="this.classList.toggle('flipped')">
+            <div class="project-inner">
+              <div class="project-front">
+                <h3 class="project-title">Hawa</h3>
+                <div class="project-stamp">✉️</div>
+              </div>
+              <div class="project-back">
+                <div class="postcard-layout">
+                  <div class="postcard-left">
+                    <img src="hawamock.png" alt="Gesture-Craft Image" class="postcard-photo">
+                  </div>
+                  <div class="postcard-right">
+                    
+                    <p class="project-description">
+                      Designed and developed an Islamic community hub app that helps users track daily spiritual goals, connect with peers, and explore Islamic resources in a
+personalized dashboard. 
+                    </p>
+                    <div class="project-tags">
+                      <span class="project-tag">Figma</span>
+                      <span class="project-tag">HTML</span>
+                      <span class="project-tag">JavaScript</span>
+                      <a href="hawa.html" class="project-btn" >View Project →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" onclick="this.classList.toggle('flipped')">
+            <div class="project-inner">
+              <div class="project-front">
+                <h3 class="project-title">TailorTalk</h3>
+                <div class="project-stamp">✉️</div>
+              </div>
+              <div class="project-back">
+                <div class="postcard-layout">
+                  <div class="postcard-left">
+                    <img src="tt.png" alt="Gesture-Craft Image" class="postcard-photo">
+                  </div>
+                  <div class="postcard-right">
+                    <div class="postcard-stamp">PLACE STAMP HERE</div>
+                    <p class="project-description">
+                      Redesigned and developed TailorTalk’s website to reflect its pivot toward integrating AI into the creative writing process.                    </p>
+                    <div class="project-tags">
+                      <span class="project-tag">HTML</span>
+                      <span class="project-tag">Javascript</span>
+                      <span class="project-tag">Git</span>
+                      <a href="tt.html" class="project-btn" >View Project →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" onclick="this.classList.toggle('flipped')">
+            <div class="project-inner">
+              <div class="project-front">
+                <h3 class="project-title">Gesture-Craft</h3>
+                <div class="project-stamp"></div>
+              </div>
+              <div class="project-back">
+                <div class="postcard-layout">
+                  <div class="postcard-left">
+                    <img src="w1.PNG" alt="Gesture-Craft Image" class="postcard-photo">
+                  </div>
+                  <div class="postcard-right">
+                    
+                    <p class="project-description">
+                      Led the design and development of an educational project integrating gesture recognition into Minecraft to create an inclusive, embodied learning experience for children.                    </p>
+                    <div class="project-tags">
+                      <span class="project-tag">Python</span>
+                      <span class="project-tag">OpenCV</span>
+                      <span class="project-tag">Mediapipe</span>
+                      <a href="gc.html" class="project-btn" >View Project →</a>
+                    </div>
+                  </div>
+                </div>           
+              </div>
+            </div>
+          </div>
+          
+          
+      
+          <!-- Repeat this structure for each project -->
+        </div>
+      </div>
+      
+      
+      
+    <!-- Projects Section
+    <div class="section">
+        <h2 class="section-title">things i've made</h2>
+        <div class="section-subtitle">projects & experiments</div>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon">🎨</div>
+                <div class="project-title">UX Design Project</div>
+                <div class="project-description">
+                    human-centered design creating intuitive interfaces and meaningful experiences
+                </div>
+                <div class="project-location">📍 Chicago</div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">💻</div>
+                <div class="project-title">Startup Web Dev</div>
+                <div class="project-description">
+                    frontend magic for student startups, bringing ideas to life with clean code
+                </div>
+                <div class="project-location">📍 New York</div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🔬</div>
+                <div class="project-title">TIILT Lab Research</div>
+                <div class="project-description">
+                    tinkering and testing through hands-on experiments in the lab
+                </div>
+                <div class="project-location">📍 San Francisco</div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">📱</div>
+                <div class="project-title">Mobile Interfaces</div>
+                <div class="project-description">
+                    responsive mobile experiences built with Swift and modern design
+                </div>
+                <div class="project-location">📍 London</div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">✨</div>
+                <div class="project-title">Creative Coding</div>
+                <div class="project-description">
+                    experimental art meets tech in interactive digital experiences
+                </div>
+                <div class="project-location">📍 Paris</div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🎬</div>
+                <div class="project-title">Personal Work</div>
+                <div class="project-description">
+                    film photography, fashion customization, and creative exploration
+                </div>
+                <div class="project-location">📍 Everywhere</div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Experience Section -->
+    <div class="section">
+        <h2 class="section-title">my journey</h2>
+        <div class="section-subtitle">where i've been</div>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">✎</div>
+                <div class="timeline-date">Expected June 2026</div>
+                <div class="timeline-title">Northwestern University</div>
+                <div class="timeline-description">
+                    Currently pursuing a B.A. in Cognitive Science, Design, & HCI integrating knowledge of human cognition with technical skills in programming and design. Relevant courses include Fundamentals of Computer Programming, Data Structures and Algorithms, Introduction to Cognitive Modeling, Design, Thinking, & Communication, HCI Studio, User Experience Design, Technology & Human Interaction.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">✄</div>
+                <div class="timeline-date">June 2025 - Sep 2025</div>
+                <div class="timeline-title">
+                    Product design and Strategy Intern @ United Airlines</div>
+                <div class="timeline-description">
+                    Conducted usability research for the United Aviate site, analyzing user interviews, mapping journeys, and building affinity maps to identify pain points and behavioral patterns. Synthesized qualitative and quantitative data, including engagement metrics from Google Analytics and Quantum Metric, to generate actionable UX recommendations and inform redesigned UI components. Prototyped new interfaces in Figma, iterated based on testing, and developed a digital dashboard for the "Frequent Flyer Switchers" loyalty campaign, integrating personalized experiences and behavioral nudges to boost engagement. Collaborated across marketing, communications, and branding teams to produce consistent creative assets across digital channels.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">✍︎</div>
+                <div class="timeline-date">2024 - Present</div>
+                <div class="timeline-title">Lead UI Designer @ The Garage</div>
+                <div class="timeline-description">
+                    Led the design of a responsive UI in Figma, creating wireframes, high-fidelity mockups, and interactive prototypes for habit tracking and peer accountability. Developed a cohesive brand kit and scalable design system with reusable components, ensuring strong visual identity and seamless developer implementation. Conducted user research and usability testing to refine navigation, accessibility, and engagement, driving improved user retention and experience.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">❀</div>
+                <div class="timeline-date">2023 - present</div>
+                <div class="timeline-title">Researcher & Developer @ TIILT Lab</div>
+                <div class="timeline-description">
+                    Managed the Gesture-Craft team at the Technological Innovations for Inclusive Learning and Teaching (TIILT) Lab, conducting research on gesture-based learning and its cognitive benefits for children. Designed and developed a Python-based gesture interface using camera input to recognize hand gestures, customizing it for children and integrating it into Minecraft to enhance engagement and interactive learning experiences.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">☘︎</div>
+                <div class="timeline-date">2022 - present</div>
+                <div class="timeline-title">Media & Marketing Team @ A&O Productions</div>
+                <div class="timeline-description">
+                    Design and produce multi-platform promotional assets for A&O Productions, applying professional design principles in Adobe Creative Suite to develop and maintain the organization’s distinctive brand identity. Execute technical production workflows for concerts, film screenings, speaker series, and special events, optimizing visual content through color management and proper file formatting to ensure consistency and maximize engagement across university marketing channels.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">🂭</div>
+                <div class="timeline-date">June - Aug 2024</div>
+                <div class="timeline-title">UX Design Intern @ PriceSenz</div>
+                <div class="timeline-description">
+                    Designed and developed a React-based dashboard for an AI-enhanced recruitment platform, enabling streamlined candidate insights, tracking, and predictive analytics that improved screening speed by 40% and achieved an 85% recruiter satisfaction rate. Collaborated with product and engineering teams to redesign recruitment workflows, creating high-fidelity Figma prototypes and a modular Storybook component system that reduced time-to-hire by 35% and improved tracking efficiency by 50%. Conducted usability testing to enhance navigation, accessibility, and inclusivity, iterating designs based on stakeholder feedback to align with business goals and user needs.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="contact-box">
+            <h2 class="section-title" style="margin-bottom: 1rem;">let's connect!</h2>
+            <p class="contact-text">
+                want to work together or just chat about design, code, or cameras? hit me up!
+            </p>
+            
+            <div class="contact-links">
+              <a href="mailto:jannahissa2026@u.northwestern.edu" class="contact-btn">
+                <span>📧</span> email
+              </a>
+              <a href="https://www.linkedin.com/in/jannah-issa/" target="_blank" class="contact-btn">
+                <span>💼</span> linkedin
+              </a>
+              <a href="https://github.com/Jannahissa" target="_blank" class="contact-btn">
+                <span>💻</span> github
+              </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add playful interactions
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const rotation = Math.random() * 10 - 5;
+                this.style.transform = `rotate(${rotation}deg) scale(0.95)`;
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+
+        // Animate skill cards on hover
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transition = 'transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+            });
+        });
+    </script>
+</body>
+</html>
