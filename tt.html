@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Indie+Flower&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailorTalk - Jannah's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Caveat', cursive;
+            background: #c5e5f8;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        /* Floating clouds animation */
+        .clouds {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 100px;
+            animation: float 60s infinite linear;
+        }
+
+        .cloud::before, .cloud::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 100px;
+        }
+
+        .cloud1 { width: 100px; height: 40px; top: 10%; left: -10%; animation-duration: 50s; }
+        .cloud1::before { width: 50px; height: 50px; top: -25px; left: 10px; }
+        .cloud1::after { width: 60px; height: 40px; top: -15px; right: 10px; }
+
+        .cloud2 { width: 120px; height: 50px; top: 30%; left: -15%; animation-duration: 70s; }
+        .cloud2::before { width: 60px; height: 60px; top: -30px; left: 15px; }
+        .cloud2::after { width: 70px; height: 50px; top: -20px; right: 15px; }
+
+        .cloud3 { width: 80px; height: 35px; top: 60%; left: -10%; animation-duration: 55s; }
+        .cloud3::before { width: 45px; height: 45px; top: -20px; left: 10px; }
+        .cloud3::after { width: 50px; height: 35px; top: -15px; right: 10px; }
+
+        @keyframes float {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120vw); }
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            transform: rotate(-5deg);
+        }
+
+        .back-btn:hover {
+            transform: rotate(0deg) scale(1.1);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+        }
+
+        /* Project Header */
+        .project-header {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.2));
+        }
+
+        .project-name {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            transform: rotate(-2deg);
+            line-height: 1.1;
+        }
+
+        .project-tagline {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #34495e;
+            transform: rotate(1deg);
+            font-weight: 500;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.3rem;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+        }
+
+        .meta-item:nth-child(2) {
+            transform: rotate(1deg);
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: #9b59b6;
+        }
+
+        /* Content Container */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Overview Section */
+        .overview-section {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: #e1bee7;
+            z-index: -1;
+            transform: rotate(-1deg);
+        }
+
+        .overview-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(0.5deg);
+        }
+
+        .stats-section .section-title {
+            color: white;
+        }
+
+        .stats-section .section-title::after {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            border: 2px solid #2c3e50;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #9b59b6;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+
+        /* Role Section */
+        .role-section {
+            background: #e8f5e9;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(0.5deg);
+        }
+
+        .role-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .role-item {
+            background: white;
+            border: 2px solid #2c3e50;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+        }
+
+        .role-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .role-text {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            margin-bottom: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .photo-card {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+            transform: rotate(1deg);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:nth-child(2) {
+            transform: rotate(-1deg);
+        }
+
+        .photo-card:nth-child(3) {
+            transform: rotate(2deg);
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #e8e8e8;
+            border: 2px solid #2c3e50;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            font-size: 1.3rem;
+            color: #555;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: #ffe6f0;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            border: 2px solid #2c3e50;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            color: #9b59b6;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            background: #d4f1f4;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-tag {
+            background: white;
+            color: #2c3e50;
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            border: 3px solid #2c3e50;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+        }
+
+        .tech-tag:nth-child(2n) {
+            transform: rotate(2deg);
+        }
+
+        /* Results Section */
+        .results-section {
+            background: #fff4e6;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(0.5deg);
+        }
+
+        .impact-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        .project-footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 1.3rem;
+            color: #7f8c8d;
+        }
+
+        /* Navigation */
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 4rem 0;
+            padding: 0 2rem;
+        }
+
+        .nav-btn {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 1.5rem 2rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+            .project-name {
+                font-size: 3.5rem;
+            }
+
+            .project-tagline {
+                font-size: 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Clouds -->
+    <div class="clouds">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+    </div>
+
+    <!-- Back Button -->
+    <a href="home.html#projects" class="back-btn">←</a>
+
+    <!-- Project Header -->
+    <div class="project-header">
+        <div class="project-icon">✨</div>
+        <h1 class="project-name">TailorTalk</h1>
+        <div class="project-tagline">AI-powered creative writing platform for storytellers</div>
+        
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Role:</span> Full-Stack Designer & Developer
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Type:</span> Student Startup Website
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="content-container">
+        <!-- Overview -->
+        <div class="overview-section">
+            <h2 class="section-title">Overview</h2>
+            <p class="overview-text">
+                TailorTalk is an AI-powered creative writing platform designed to help storytellers craft compelling narratives through intelligent tools and intuitive design. As the Full-Stack Designer & Developer, I built a responsive web application that combines cutting-edge AI features with a seamless user experience.
+            </p>
+            <p class="overview-text">
+                The platform empowers writers to develop characters, generate dialogue, and organize complex storylines with unprecedented speed and creativity—all within a beautifully designed, futuristic interface.
+            </p>
+        </div>
+
+        <!-- Impact Stats -->
+        <div class="stats-section">
+            <h2 class="section-title">Impact Metrics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">65%</div>
+                    <div class="stat-label">Increase in user engagement</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">45%</div>
+                    <div class="stat-label">Improvement in content creation speed</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Role -->
+        <div class="role-section">
+            <h2 class="section-title">My Role</h2>
+            <p class="overview-text" style="margin-bottom: 1rem;">
+                As Full-Stack Designer & Developer for this student startup, I handled both the design and technical implementation:
+            </p>
+            <div class="role-list">
+                <div class="role-item">
+                    <div class="role-icon">🎨</div>
+                    <div class="role-text">Designed and prototyped the complete user interface in Figma, creating innovative and futuristic layouts that enhance the creative writing experience.</div>
+                </div>
+                <div class="role-item">
+                    <div class="role-icon">💻</div>
+                    <div class="role-text">Developed the responsive website using React, Next.js, and Tailwind CSS with a Node.js/Express backend, ensuring cross-platform usability.</div>
+                </div>
+                <div class="role-item">
+                    <div class="role-icon">🤖</div>
+                    <div class="role-text">Implemented AI-powered features including Character Builder, Dialogue Generator, and Storyline Organizer that transformed how users create content.</div>
+                </div>
+                <div class="role-item">
+                    <div class="role-icon">🔧</div>
+                    <div class="role-text">Strategically organized content hierarchy and interactive components to ensure seamless navigation and an intuitive user experience.</div>
+                </div>
+                <div class="role-item">
+                    <div class="role-icon">👥</div>
+                    <div class="role-text">Collaborated with cross-functional teams including content strategists and developers to shape cohesive design strategies aligned with user needs.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="photo-gallery">
+            <h2 class="section-title">Design Showcase</h2>
+            <div class="gallery-grid">
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <img src="laptop.png">
+                    </div>
+                    <p class="photo-caption">Futuristic homepage design with intuitive navigation</p>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <img src="character.png">
+                    </div>
+                    <p class="photo-caption">AI-powered Character Builder and Dialogue Generator interface</p>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <img src="setting.png">
+                    </div>
+                    <p class="photo-caption">Storyline Organizer with drag-and-drop functionality</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features-section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">🎭</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Character Builder</div>
+                        AI-powered tool to create deep, complex characters with personality traits, backstories, and motivations.
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💬</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Dialogue Generator</div>
+                        Generate authentic dialogue that matches character voices and advances your story naturally.
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📚</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Storyline Organizer</div>
+                        Visual organization system for plotting complex narratives with multiple threads and timelines.
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Responsive Design</div>
+                        Seamless experience across all devices with adaptive layouts and touch-optimized interfaces.
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Real-Time Collaboration</div>
+                        Work together with other writers in real-time with synchronized editing and feedback tools.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="tech-stack">
+            <h2 class="section-title">Technologies Used</h2>
+            <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">AI Integration</span>
+                <span class="tech-tag">Responsive Design</span>
+            </div>
+        </div>
+
+        <!-- Impact -->
+        <div class="results-section">
+            <h2 class="section-title">Design Impact</h2>
+            <p class="impact-text">
+                By addressing complex design challenges through innovative prototyping and futuristic layouts, TailorTalk achieved measurable improvements in user engagement and productivity. The strategic implementation of a structured content hierarchy and interactive components ensured that writers could focus on their creativity rather than fighting with the interface.
+            </p>
+            <p class="impact-text">
+                The responsive design principles allowed the platform to maintain its sophisticated aesthetic and functionality across all devices, from desktop workstations to mobile devices, making creative writing accessible anywhere inspiration strikes.
+            </p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="project-nav">
+        <a href="spotify.html" class="nav-btn">
+            ← Previous Project
+        </a>
+        <a href="home.html#projects" class="nav-btn">
+            ← Back to Projects
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="project-footer">
+        Design & Development by Jannah Issa
+    </div>
+
+</body>
+</html>

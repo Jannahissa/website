@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Indie+Flower&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer Pressure - Jannah's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Caveat', cursive;
+            background: #c5e5f8;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        /* Floating clouds animation */
+        .clouds {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 100px;
+            animation: float 60s infinite linear;
+        }
+
+        .cloud::before, .cloud::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 100px;
+        }
+
+        .cloud1 { width: 100px; height: 40px; top: 10%; left: -10%; animation-duration: 50s; }
+        .cloud1::before { width: 50px; height: 50px; top: -25px; left: 10px; }
+        .cloud1::after { width: 60px; height: 40px; top: -15px; right: 10px; }
+
+        .cloud2 { width: 120px; height: 50px; top: 30%; left: -15%; animation-duration: 70s; }
+        .cloud2::before { width: 60px; height: 60px; top: -30px; left: 15px; }
+        .cloud2::after { width: 70px; height: 50px; top: -20px; right: 15px; }
+
+        .cloud3 { width: 80px; height: 35px; top: 60%; left: -10%; animation-duration: 55s; }
+        .cloud3::before { width: 45px; height: 45px; top: -20px; left: 10px; }
+        .cloud3::after { width: 50px; height: 35px; top: -15px; right: 10px; }
+
+        @keyframes float {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120vw); }
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            transform: rotate(-5deg);
+        }
+
+        .back-btn:hover {
+            transform: rotate(0deg) scale(1.1);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+        }
+
+        /* Project Header */
+        .project-header {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.2));
+        }
+
+        .project-name {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            transform: rotate(-2deg);
+            line-height: 1.1;
+        }
+
+        .project-tagline {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #34495e;
+            transform: rotate(1deg);
+            font-weight: 500;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.3rem;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+        }
+
+        .meta-item:nth-child(2) {
+            transform: rotate(1deg);
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        /* Content Container */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Overview Section */
+        .overview-section {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: #ffeb99;
+            z-index: -1;
+            transform: rotate(-1deg);
+        }
+
+        .overview-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            margin-bottom: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .photo-card {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+            transform: rotate(1deg);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:nth-child(2) {
+            transform: rotate(-1deg);
+        }
+
+        .photo-card:nth-child(3) {
+            transform: rotate(2deg);
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #e8e8e8;
+            border: 2px solid #2c3e50;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            font-size: 1.3rem;
+            color: #555;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Role Section */
+        .role-section {
+            background: #e8f5e9;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(0.5deg);
+        }
+
+        .role-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .role-item {
+            background: white;
+            border: 2px solid #2c3e50;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+        }
+
+        .role-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .role-text {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: #ffe6f0;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            border: 2px solid #2c3e50;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+
+        /* Process Section */
+        .process-section {
+            margin-bottom: 3rem;
+        }
+
+        .process-content {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(0.5deg);
+            margin-top: 2rem;
+        }
+
+        .process-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            background: #d4f1f4;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-tag {
+            background: white;
+            color: #2c3e50;
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            border: 3px solid #2c3e50;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+        }
+
+        .tech-tag:nth-child(2n) {
+            transform: rotate(2deg);
+        }
+
+        /* Results/Impact Section */
+        .results-section {
+            background: #fff4e6;
+            border: 3px solid #2c3e50;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+            transform: rotate(0.5deg);
+        }
+
+        .impact-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        .project-footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 1.3rem;
+            color: #7f8c8d;
+        }
+
+        /* Navigation */
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 4rem 0;
+            padding: 0 2rem;
+        }
+
+        .nav-btn {
+            background: white;
+            border: 3px solid #2c3e50;
+            border-radius: 15px;
+            padding: 1.5rem 2rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+            .project-name {
+                font-size: 3.5rem;
+            }
+
+            .project-tagline {
+                font-size: 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Clouds -->
+    <div class="clouds">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+    </div>
+
+    <!-- Back Button -->
+    <a href="home.html#projects" class="back-btn">←</a>
+
+    <!-- Project Header -->
+    <div class="project-header">
+        <div class="project-icon">🤝</div>
+        <h1 class="project-name">Peer Pressure</h1>
+        <div class="project-tagline">Designing positive peer accountability for better digital habits</div>
+        
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Role:</span> Lead UI Designer
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Platform:</span> Mobile App
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="content-container">
+        <!-- Overview -->
+        <div class="overview-section">
+            <h2 class="section-title">Overview</h2>
+            <p class="overview-text">
+                Peer Pressure is a behavioral design app that uses social accountability to help users manage screen time, reduce distractions, and build healthier digital habits. The platform leverages positive peer influence and habit tracking to create meaningful change through community support.
+            </p>
+        </div>
+
+        <!-- My Role -->
+        <div class="role-section">
+            <h2 class="section-title">My Role</h2>
+            <p class="overview-text" style="margin-bottom: 1rem;">
+                As Lead UI Designer, I designed and prototyped a fully responsive interface in Figma — from low-fidelity wireframes to high-fidelity mockups and interactive prototypes. My responsibilities included:
+            </p>
+            <div class="role-list">
+                <div class="role-item">
+                    <div class="role-icon">🎨</div>
+                    <div class="role-text">Designing and prototyping a responsive UI in Figma for habit tracking, peer accountability, and distraction management.</div>
+                </div>
+                <div class="role-item">
+                    <div class="role-icon">🎯</div>
+                    <div class="role-text">Developing a cohesive brand kit — including the logo, color palette, typography, and UI components — to ensure strong visual identity and recognition.</div>
+                </div>
+                <div class="role-item">
+                    <div class="role-icon">👥</div>
+                    <div class="role-text">Conducting user research through interviews and usability testing to refine navigation flows, accessibility, and retention.</div>
+                </div>
+                <div class="role-item">
+                    <div class="role-icon">🔧</div>
+                    <div class="role-text">Building a scalable design system with reusable components and interaction guidelines, collaborating closely with developers for pixel-perfect implementation.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design Process -->
+        <div class="process-section">
+            <h2 class="section-title">Design Process</h2>
+            <div class="process-content">
+                <p class="process-text">
+                    The design process began with user interviews focused on understanding how peer dynamics influence productivity and screen habits. Insights revealed that users were more likely to stay accountable when progress and encouragement were shared socially.
+                </p>
+                <p class="process-text">
+                    From there, I developed journey maps and wireframes to visualize the app's flow — from onboarding to habit tracking — followed by iterative usability tests to refine the experience. The final prototype emphasizes simplicity, clarity, and motivational design.
+                </p>
+            </div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="photo-gallery">
+            <h2 class="section-title">Design Showcase</h2>
+            <div class="gallery-grid">
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <img src="home.png">
+                    </div>
+                    <p class="photo-caption">High-fidelity mockups showing peer coaching and accountability features</p>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <img src="map.png">
+                    </div>
+                    <p class="photo-caption">User journey mapping from onboarding to habit tracking</p>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <img src="brand.png">
+                    </div>
+                    <p class="photo-caption">Design system and brand kit development</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features-section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-text">Peer Coaching: Connect with friends who provide encouragement when you exceed your screen limits.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-text">Screen Time Tracking: Monitor app usage and set healthy limits across apps and categories.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-text">Usage Analytics: Gain insights into behavior patterns to make meaningful improvements.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔔</div>
+                    <div class="feature-text">Peer Notifications: Your accountability partners get notified when thresholds are reached.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-text">Progress Tracking: Celebrate milestones and habit improvements over time.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="tech-stack">
+            <h2 class="section-title">Tools & Technologies</h2>
+            <div class="tech-tags">
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">Prototyping</span>
+                <span class="tech-tag">User Research</span>
+                <span class="tech-tag">Usability Testing</span>
+                <span class="tech-tag">Design Systems</span>
+                <span class="tech-tag">Brand Design</span>
+            </div>
+        </div>
+
+        <!-- Impact -->
+        <div class="results-section">
+            <h2 class="section-title">Impact</h2>
+            <p class="impact-text">
+                Through design iteration and user validation, Peer Pressure achieved strong usability and engagement metrics in testing, helping users reduce their average screen time by up to 20% while increasing motivation through shared accountability. The app's social-first approach sets it apart from typical habit trackers by transforming self-control into a community-driven experience.
+            </p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="project-nav">
+        <a href="spotify.html" class="nav-btn">
+            ← Previous Project
+        </a>
+        <a href="home.html#projects" class="nav-btn">
+            Back to Projects →
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="project-footer">
+        © 2025 Peer Pressure | Designed by Jannah Issa
+    </div>
+
+</body>
+</html>
