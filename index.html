@@ -984,6 +984,270 @@
                 margin-left: 50px;
             }
         }
+        /* ============================================ */
+/* MOBILE RESPONSIVENESS */
+/* ============================================ */
+
+@media (max-width: 768px) {
+    /* Hero Section Mobile */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.4rem;
+    }
+
+    .bio {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+    }
+
+    /* Passport Card Mobile - Stack Vertically */
+    .passport-card {
+        flex-direction: column;
+        height: auto;
+        max-width: 90%;
+        transform: rotate(0deg);
+    }
+
+    .passport-card::before {
+        display: none;
+    }
+
+    .passport-left,
+    .passport-right {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .passport-left {
+        border-radius: 8px 8px 0 0;
+        border-right: 2px solid #000000;
+        padding: 1.5rem;
+    }
+
+    .passport-right {
+        border-radius: 0 0 8px 8px;
+        border-left: 2px solid #000000;
+        padding: 1.5rem;
+    }
+
+    .passport-emblem {
+        font-size: 4rem;
+    }
+
+    .passport-title {
+        font-size: 2rem;
+    }
+
+    .passport-photo {
+        width: 80px;
+        height: 100px;
+    }
+
+    .passport-label,
+    .passport-value {
+        font-size: 1rem;
+    }
+
+    /* Section Titles Mobile */
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.3rem;
+    }
+
+    /* Projects Grid Mobile */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        min-height: 280px;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+    }
+
+    .postcard-photo {
+        width: 90%;
+    }
+
+    .project-description {
+        font-size: 0.65rem;
+    }
+
+    .project-tag {
+        font-size: 0.8rem;
+    }
+
+    .project-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Skills Grid Mobile */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .skill-card {
+        transform: rotate(0deg) !important;
+    }
+
+    .skill-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .skill-card li {
+        font-size: 1.2rem;
+    }
+
+    /* Timeline Mobile */
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        margin-left: 50px;
+        padding: 1.5rem;
+        transform: rotate(0deg) !important;
+    }
+
+    .timeline-item::before {
+        left: -36px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .timeline-icon {
+        font-size: 2rem;
+    }
+
+    .timeline-date {
+        font-size: 1rem;
+    }
+
+    .timeline-title {
+        font-size: 1.4rem;
+    }
+
+    .timeline-description {
+        font-size: 1.1rem;
+    }
+
+    /* Contact Section Mobile */
+    .contact-box {
+        padding: 2rem;
+        transform: rotate(0deg);
+    }
+
+    .contact-text {
+        font-size: 1.3rem;
+    }
+
+    .contact-btn {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    /* Sun Mobile */
+    .sun {
+        width: 80px;
+        height: 80px;
+        top: 5%;
+        right: 5%;
+    }
+
+    /* Clouds Mobile - Reduce Size */
+    .cloud1,
+    .cloud2,
+    .cloud3,
+    .cloud4,
+    .cloud5,
+    .cloud6,
+    .cloud8 {
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra Small Mobile */
+    h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .bio {
+        font-size: 1.1rem;
+        padding: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .passport-card {
+        max-width: 95%;
+    }
+
+    .project-card {
+        min-height: 250px;
+    }
+
+    .contact-btn {
+        font-size: 1.1rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    .timeline-description {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet Styles */
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .tagline {
+        font-size: 1.8rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
     </style>
 </head>
 <body>
